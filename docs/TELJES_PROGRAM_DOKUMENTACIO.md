@@ -2,15 +2,14 @@
 
 ## Tartalomjegyzék
 1. [Projekt Áttekintés](#projekt-áttekintés)
-2. [Technológiai Stack](#technológiai-stack)
-3. [Telepítés és Konfiguráció](#telepítés-és-konfiguráció)
-4. [Adatbázis Struktúra](#adatbázis-struktúra)
-5. [API Végpontok](#api-végpontok)
-6. [Postman Collection](#postman-collection)
-7. [Tesztelés](#tesztelés)
-8. [Authentikáció](#authentikáció)
-9. [Használati Példák](#használati-példák)
-10. [Hibaelhárítás](#hibaelhárítás)
+2. [Telepítés és Konfiguráció](#telepítés-és-konfiguráció)
+3. [Adatbázis Struktúra](#adatbázis-struktúra)
+4. [API Végpontok](#api-végpontok)
+5. [Postman Collection](#postman-collection)
+6. [Tesztelés](#tesztelés)
+7. [Authentikáció](#authentikáció)
+8. [Használati Példák](#használati-példák)
+9. [Hibaelhárítás](#hibaelhárítás)
 
 ---
 
@@ -25,35 +24,6 @@ Ez egy Laravel 11-ben készült REST API projekt, amit csapatok kezelésére csi
 - **Tesztek** - 27 automated test teljes lefedettséggel
 - **Adatbázis kapcsolatok** - User-Team many-to-many relationship
 - **Magyar lokalizáció** - Időzóna, nyelv, faker adatok
-
----
-
-## Technológiai Stack
-
-### Backend
-- **Laravel 11.x** - PHP framework
-- **PHP 8.2+** - Programozási nyelv
-- **Laravel Sanctum 4.2.1** - API token authentikáció
-- **Eloquent ORM** - Adatbázis kezelés
-
-### Adatbázis
-- **SQLite** - Alapértelmezett (könnyű fejlesztéshez)
-- **MySQL kompatibilis** - Átállítható production környezetre
-
-### Testing
-- **PHPUnit** - Unit és Feature tesztek
-- **Laravel Testing** - HTTP tesztek, adatbázis tesztek
-
-### Development Tools
-- **Composer** - PHP package manager
-- **Artisan** - Laravel CLI
-- **Faker (hu_HU)** - Magyar fake adatok generálása
-- **Postman** - API tesztelés
-
-### További Packages
-- **Guzzle** - HTTP client
-- **Carbon** - Dátum/idő kezelés
-- **Monolog** - Logging
 
 ---
 
