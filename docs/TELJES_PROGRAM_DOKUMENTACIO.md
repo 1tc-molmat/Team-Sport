@@ -19,12 +19,12 @@
 Ez egy Laravel 11-ben készült REST API projekt, amit csapatok kezelésére csináltam. A rendszer lehetővé teszi felhasználók regisztrációját, bejelentkezését, és csapatok létrehozását/kezelését.
 
 ### Főbb funkciók:
-- 👤 **User authentikáció** - Regisztráció, bejelentkezés, kijelentkezés
-- 🏆 **Csapat kezelés** - CRUD műveletek csapatokra
-- 🔐 **Bearer Token** - Laravel Sanctum alapú biztonságos authentikáció
-- 🧪 **Tesztek** - 27 automated test teljes lefedettséggel
-- 📊 **Adatbázis kapcsolatok** - User-Team many-to-many relationship
-- 🌍 **Magyar lokalizáció** - Időzóna, nyelv, faker adatok
+- **User authentikáció** - Regisztráció, bejelentkezés, kijelentkezés
+- **Csapat kezelés** - CRUD műveletek csapatokra
+- **Bearer Token** - Laravel Sanctum alapú biztonságos authentikáció
+- **Tesztek** - 27 automated test teljes lefedettséggel
+- **Adatbázis kapcsolatok** - User-Team many-to-many relationship
+- **Magyar lokalizáció** - Időzóna, nyelv, faker adatok
 
 ---
 
@@ -229,17 +229,17 @@ http://localhost:8000/api
 
 | Metódus | Végpont | Auth | Leírás |
 |---------|---------|------|--------|
-| GET | /ping | ❌ | API health check |
-| POST | /register | ❌ | Regisztráció |
-| POST | /login | ❌ | Bejelentkezés |
-| POST | /logout | ✅ | Kijelentkezés |
-| GET | /me | ✅ | Saját adatok |
-| GET | /teams | ✅ | Csapatok listája |
-| POST | /teams | ✅ | Új csapat |
-| GET | /teams/{id} | ✅ | Egy csapat |
-| PUT | /teams/{id} | ✅ | Teljes frissítés |
-| PATCH | /teams/{id} | ✅ | Részleges frissítés |
-| DELETE | /teams/{id} | ✅ | Törlés |
+| GET | /ping | Nem | API health check |
+| POST | /register | Nem | Regisztráció |
+| POST | /login | Nem | Bejelentkezés |
+| POST | /logout | Igen | Kijelentkezés |
+| GET | /me | Igen | Saját adatok |
+| GET | /teams | Igen | Csapatok listája |
+| POST | /teams | Igen | Új csapat |
+| GET | /teams/{id} | Igen | Egy csapat |
+| PUT | /teams/{id} | Igen | Teljes frissítés |
+| PATCH | /teams/{id} | Igen | Részleges frissítés |
+| DELETE | /teams/{id} | Igen | Törlés |
 
 ---
 
@@ -704,17 +704,17 @@ Készítettem egy kész Postman collection-t, amit azonnal használhatsz!
 ![Postman Collection](./Névtelen.png)
 
 A collection 11 kérést tartalmaz:
-- ✅ Health Check (Ping)
-- ✅ Register (Random user generálás)
-- ✅ Login (Máté bejelentkezés)
-- ✅ Get Me (Saját adatok)
-- ✅ Logout
-- ✅ Get All Teams (Lista)
-- ✅ Get Single Team
-- ✅ Create Team
-- ✅ Update Team (PUT)
-- ✅ Partial Update (PATCH)
-- ✅ Delete Team
+- Health Check (Ping)
+- Register (Random user generálás)
+- Login (Máté bejelentkezés)
+- Get Me (Saját adatok)
+- Logout
+- Get All Teams (Lista)
+- Get Single Team
+- Create Team
+- Update Team (PUT)
+- Partial Update (PATCH)
+- Delete Team
 
 ### Beépített funkciók:
 
@@ -758,10 +758,10 @@ php artisan test
 ![Test Results](./test.png)
 
 **Összesítés:**
-- ✅ **27 teszt passou**
-- ✅ **124 assertion**
-- ✅ **~1 másodperc futási idő**
-- ✅ **0 failed test**
+- **27 teszt passou**
+- **124 assertion**
+- **~1 másodperc futási idő**
+- **0 failed test**
 
 ### Teszt fájlok struktúrája
 
@@ -913,11 +913,11 @@ public function test_ping_endpoint_returns_success(): void
 ### Teszt lefedettség
 
 **Feature tesztek:** Teljes API végpont lefedettség
-- ✅ Minden endpoint tesztelve (11 végpont)
-- ✅ Sikeres esetek (happy path)
-- ✅ Hibás esetek (validáció, 404, 401)
-- ✅ Authentikációs logika
-- ✅ Adatbázis műveletek
+- Minden endpoint tesztelve (11 végpont)
+- Sikeres esetek (happy path)
+- Hibás esetek (validáció, 404, 401)
+- Authentikációs logika
+- Adatbázis műveletek
 
 **RefreshDatabase trait:** Minden teszt tiszta adatbázissal fut
 ```php
@@ -1512,31 +1512,31 @@ if ($this->app->environment('production')) {
 
 ### További fejlesztési lehetőségek
 
-- 🔐 **Email verification** - Email megerősítés regisztráció után
-- 🔑 **Password reset** - Elfelejtett jelszó funkció
-- 👥 **Team invitation system** - Csapatba hívás
-- 📊 **Advanced filtering** - Csapatok szűrése sport típus/skill szerint
-- 🖼️ **File upload** - Profilkép, csapat logó
-- 📱 **Real-time notifications** - Laravel Echo + WebSockets
-- 🔍 **Full-text search** - Laravel Scout
-- 📈 **Statistics** - User/Team statisztikák
-- 🌐 **Multi-language** - Több nyelv támogatás
-- 🔒 **Rate limiting** - API használat korlátozása
-- 📝 **Logging** - Részletes naplózás
+- **Email verification** - Email megerősítés regisztráció után
+- **Password reset** - Elfelejtett jelszó funkció
+- **Team invitation system** - Csapatba hívás
+- **Advanced filtering** - Csapatok szűrése sport típus/skill szerint
+- **File upload** - Profilkép, csapat logó
+- **Real-time notifications** - Laravel Echo + WebSockets
+- **Full-text search** - Laravel Scout
+- **Statistics** - User/Team statisztikák
+- **Multi-language** - Több nyelv támogatás
+- **Rate limiting** - API használat korlátozása
+- **Logging** - Részletes naplózás
 
 ---
 
 ## Verzió történet
 
 **v1.0** - 2025-12-04
-- ✅ Initial release
-- ✅ User authentikáció (register, login, logout)
-- ✅ Bearer Token (Sanctum)
-- ✅ Teams CRUD
-- ✅ 27 automated test
-- ✅ Postman collection
-- ✅ Magyar lokalizáció
-- ✅ Seed adatok
+- Initial release
+- User authentikáció (register, login, logout)
+- Bearer Token (Sanctum)
+- Teams CRUD
+- 27 automated test
+- Postman collection
+- Magyar lokalizáció
+- Seed adatok
 
 ---
 
@@ -1557,4 +1557,4 @@ Ez egy saját projekt, szabadon használható.
 
 ---
 
-**🎉 Köszönöm, hogy használod a Team Sport API-t!**
+**Köszönöm, hogy használod a Team Sport API-t!**
