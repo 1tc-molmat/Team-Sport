@@ -1,59 +1,142 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Team Sport API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Mi ez?
 
-## About Laravel
+Ez egy Laravel API amit csináltam, hogy csapatokat lehessen kezelni. REST API, Bearer token authentikációval.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Gyors start
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```bash
+# Telepítés
+composer install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# .env beállítása
+cp .env.example .env
+php artisan key:generate
 
-## Learning Laravel
+# Adatbázis
+php artisan migrate
+php artisan db:seed
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+# Szerver indítás
+php artisan serve
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ezután a `http://localhost:8000/api`-n fut az API.
 
-## Laravel Sponsors
+## Tesztelés
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Postmanben importáld be: `TeamSport_API_READY.postman_collection.json`
 
-### Premium Partners
+Login adatok:
+- Email: `mate@example.com`
+- Jelszó: `Mate123`
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Végpontok
 
-## Contributing
+### Publikus (nem kell token)
+- `POST /api/register` - Regisztráció
+- `POST /api/login` - Bejelentkezés
+- `GET /api/ping` - Health check
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Védett (kell token)
+- `GET /api/me` - Saját adatok
+- `POST /api/logout` - Kijelentkezés
+- `GET /api/teams` - Csapatok listája
+- `POST /api/teams` - Új csapat
+- `GET /api/teams/{id}` - Egy csapat
+- `PUT /api/teams/{id}` - Csapat frissítés (teljes)
+- `PATCH /api/teams/{id}` - Csapat frissítés (részleges)
+- `DELETE /api/teams/{id}` - Csapat törlés
 
-## Code of Conduct
+## Adatbázis
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3 fő tábla:
+- **users** - Felhasználók (+ sport_type, skill_level)
+- **teams** - Csapatok
+- **team_members** - Ki melyik csapatban van
 
-## Security Vulnerabilities
+## Tesztek futtatása
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan test
+```
 
-## License
+Jelenleg 27 teszt van, mind zöld. ✅
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Technológiák
+
+- Laravel 11
+- Laravel Sanctum (Bearer token auth)
+- SQLite adatbázis (átállítható MySQL-re)
+- PHPUnit tesztek
+- Faker adatgenerálás (magyar locale)
+
+## Fake adatok
+
+A seeder generál:
+- 1 igazi user: én (mate@example.com / Mate123)
+- 10 faker user (jelszó: `password`)
+- 10 faker csapat
+- Random kapcsolatok (2-5 tag/csapat)
+
+## Példa használat
+
+### 1. Bejelentkezés
+```bash
+POST http://localhost:8000/api/login
+Content-Type: application/json
+
+{
+  "email": "mate@example.com",
+  "password": "Mate123"
+}
+```
+
+Válasz:
+```json
+{
+  "message": "Login successful",
+  "user": { ... },
+  "access_token": "1|...",
+  "token_type": "Bearer"
+}
+```
+
+### 2. Csapat létrehozás
+```bash
+POST http://localhost:8000/api/teams
+Authorization: Bearer {token}
+Content-Type: application/json
+
+{
+  "name": "Piros Csapat",
+  "sport_type": "football",
+  "max_members": 15
+}
+```
+
+### 3. Csapatok listázása
+```bash
+GET http://localhost:8000/api/teams
+Authorization: Bearer {token}
+```
+
+## Konfiguráció
+
+A `.env` fájlban:
+```env
+APP_TIMEZONE=Europe/Budapest
+APP_LOCALE=hu
+APP_FAKER_LOCALE=hu_HU
+```
+
+## Dokumentáció
+
+További infó:
+- `GYORS_ATTEKINTES.md` - Részletes áttekintés
+- `TeamSport_API_READY.postman_collection.json` - Postman collection
+
+## Licenc
+
+Ez egy saját projekt, csináld vele amit akarsz.

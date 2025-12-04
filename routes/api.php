@@ -20,7 +20,7 @@ use App\Http\Controllers\Api\TeamController;
 Route::get('/ping', function () {
     return response()->json([
         'status' => 'success',
-        'message' => 'API is running!',
+        'message' => 'API is running',
         'timestamp' => now()->toDateTimeString(),
         'timezone' => config('app.timezone'),
     ]);

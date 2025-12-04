@@ -16,10 +16,7 @@ class TeamController extends Controller
     {
         $teams = Team::with('users')->paginate(15);
 
-        return response()->json([
-            'message' => 'Teams retrieved successfully',
-            'data' => $teams,
-        ]);
+        return \App\Http\Resources\TeamResource::collection($teams);
     }
 
     /**
@@ -50,21 +47,19 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        return response()->json([
-            'message' => 'Team retrieved successfully',
-            'data' => $team->load('users'),
-        ]);
+        return new \App\Http\Resources\TeamResource($team->load('users'));
     }
 
     /**
-     * Update the specified team (PUT - full update).
+     * Update the specified team (PUT or PATCH).
      */
     public function update(Request $request, Team $team)
     {
+        // PATCH részleges frissítés támogatása
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'sport_type' => 'required|string|max:255',
-            'max_members' => 'required|integer|min:1|max:100',
+            'name' => 'sometimes|string|max:255',
+            'sport_type' => 'sometimes|string|max:255',
+            'max_members' => 'sometimes|integer|min:1|max:100',
         ]);
 
         $team->update($validated);
