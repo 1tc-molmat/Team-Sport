@@ -76,6 +76,9 @@ Response: 401 Unauthorized
 |DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése |
 
 ## Adatbázis terv
+
+![Adatbázis diagram](Névtelen.png)
+
 ```
 ┌──────────────────────┐     ┌─────────────────┐       ┌──────────────┐        ┌──────────┐
 │personal_access_tokens│     │      users      │       │team_members  │        │  teams   │
@@ -979,9 +982,368 @@ class TeamControllerTest extends TestCase
 
 `Team-Sport>php artisan test`
 
+![Teszt eredmények](test.png)
+
+---
+
 ## Dokumentálás
 - word: végpontok
 - md: projektleírás/fejlesztői dokumentáció
 - scribe
 - swagger
 - POSTMAN
+
+---
+
+# Postman Tesztelés
+
+## Postman Collection Import
+
+A projektben található `TeamSport_API_READY.postman_collection.json` fájl importálható a Postmanbe:
+
+1. Postman megnyitása
+2. **Import** gomb → **File** → `TeamSport_API_READY.postman_collection.json` kiválasztása
+3. Collection importálva → tesztelésre kész
+
+## Tesztelési folyamat
+
+### 1. API elérhetőség tesztelése
+
+**GET** `/ping`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "status": "success",
+    "message": "API is running",
+    "timestamp": "2025-12-07 14:30:00",
+    "timezone": "Europe/Budapest"
+}
+```
+
+---
+
+### 2. Regisztráció
+
+**POST** `/register`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+```
+
+**Body (JSON):**
+```json
+{
+    "name": "Test User",
+    "email": "testuser@example.com",
+    "password": "Password123",
+    "password_confirmation": "Password123",
+    "sport_type": "football",
+    "skill_level": "intermediate"
+}
+```
+
+**Válasz: 201 Created**
+```json
+{
+    "message": "Registration successful",
+    "user": {
+        "id": 12,
+        "name": "Test User",
+        "email": "testuser@example.com",
+        "sport_type": "football",
+        "skill_level": "intermediate"
+    },
+    "access_token": "2|AbCdEfGhIjKlMnOpQrStUvWxYz1234567890",
+    "token_type": "Bearer"
+}
+```
+
+**Token mentése:** Másold ki az `access_token` értékét!
+
+---
+
+### 3. Bejelentkezés
+
+**POST** `/login`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+```
+
+**Body (JSON):**
+```json
+{
+    "email": "mate@example.com",
+    "password": "Mate123"
+}
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "message": "Login successful",
+    "user": {
+        "id": 1,
+        "name": "Máté",
+        "email": "mate@example.com",
+        "sport_type": "football",
+        "skill_level": "expert"
+    },
+    "access_token": "3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt",
+    "token_type": "Bearer"
+}
+```
+
+---
+
+### 4. Saját profil lekérése (védett)
+
+**GET** `/me`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "user": {
+        "id": 1,
+        "name": "Máté",
+        "email": "mate@example.com",
+        "sport_type": "football",
+        "skill_level": "expert",
+        "created_at": "2025-12-07T10:00:00.000000Z",
+        "updated_at": "2025-12-07T10:00:00.000000Z"
+    }
+}
+```
+
+---
+
+### 5. Csapatok listázása (védett)
+
+**GET** `/teams`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Piros Warriors",
+            "sport_type": "football",
+            "max_members": 15,
+            "members_count": 3,
+            "members": [
+                {
+                    "id": 1,
+                    "name": "Máté",
+                    "email": "mate@example.com",
+                    "sport_type": "football",
+                    "skill_level": "expert",
+                    "joined_at": "2025-10-01T08:00:00.000000Z",
+                    "role": "captain"
+                }
+            ],
+            "created_at": "2025-12-01T12:00:00.000000Z",
+            "updated_at": "2025-12-01T12:00:00.000000Z"
+        }
+    ],
+    "links": {...},
+    "meta": {...}
+}
+```
+
+---
+
+### 6. Csapat létrehozása (védett)
+
+**POST** `/teams`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
+```
+
+**Body (JSON):**
+```json
+{
+    "name": "Zöld Dragons",
+    "sport_type": "basketball",
+    "max_members": 12
+}
+```
+
+**Válasz: 201 Created**
+```json
+{
+    "message": "Team created successfully",
+    "data": {
+        "id": 11,
+        "name": "Zöld Dragons",
+        "sport_type": "basketball",
+        "max_members": 12,
+        "created_at": "2025-12-07T14:35:00.000000Z",
+        "updated_at": "2025-12-07T14:35:00.000000Z"
+    }
+}
+```
+
+---
+
+### 7. Csapat részleteinek lekérése (védett)
+
+**GET** `/teams/1`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "id": 1,
+    "name": "Piros Warriors",
+    "sport_type": "football",
+    "max_members": 15,
+    "members_count": 3,
+    "members": [...],
+    "created_at": "2025-12-01T12:00:00.000000Z",
+    "updated_at": "2025-12-01T12:00:00.000000Z"
+}
+```
+
+---
+
+### 8. Csapat frissítése (védett)
+
+**PUT/PATCH** `/teams/1`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
+```
+
+**Body (JSON):**
+```json
+{
+    "name": "Piros Warriors Updated",
+    "max_members": 20
+}
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "message": "Team updated successfully",
+    "data": {
+        "id": 1,
+        "name": "Piros Warriors Updated",
+        "sport_type": "football",
+        "max_members": 20,
+        "updated_at": "2025-12-07T14:40:00.000000Z"
+    }
+}
+```
+
+---
+
+### 9. Csapat törlése (védett)
+
+**DELETE** `/teams/1`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "message": "Team deleted successfully"
+}
+```
+
+---
+
+### 10. Kijelentkezés (védett)
+
+**POST** `/logout`
+
+**Headers:**
+```
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
+```
+
+**Válasz: 200 OK**
+```json
+{
+    "message": "Logout successful"
+}
+```
+
+---
+
+## Hibakezelés Postmanben
+
+### 401 Unauthorized
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+**Megoldás:** Ellenőrizd, hogy a Bearer token helyesen van-e megadva az Authorization headerben.
+
+### 404 Not Found
+```json
+{
+    "message": "No query results for model [App\\Models\\Team] 999"
+}
+```
+**Megoldás:** A kért csapat ID nem létezik az adatbázisban.
+
+### 422 Unprocessable Entity
+```json
+{
+    "message": "The email has already been taken.",
+    "errors": {
+        "email": [
+            "The email has already been taken."
+        ]
+    }
+}
+```
+**Megoldás:** Validációs hiba - javítsd az input adatokat.
