@@ -1,4 +1,4 @@
-# Team Sport REST API megvalósítása Laravel környezetben# Team Sport REST API megvalósítása Laravel környezetben# Team Sport REST API megvalósítása Laravel környezetben
+# Team Sport REST API megvalósítása Laravel környezetben# Team Sport REST API megvalósítása Laravel környezetben# Team Sport REST API megvalósítása Laravel környezetben# Team Sport REST API megvalósítása Laravel környezetben
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilvános elérhetőségét. Ennek a backendnek a fő célja, hogy kiszolgálja a frontendet, amelyet a felhasználók csapatok létrehozására és kezelésére használnak.**base_url:** `http://127.0.0.1:8000/api` vagy `http://127.0.0.1/Team-Sport/public/api`**base_url:** `http://127.0.0.1:8000/api` vagy `http://127.0.0.1/Team-Sport/public/api`
+Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilvános elérhetőségét. Ennek a backendnek a fő célja, hogy kiszolgálja a frontendet, amelyet a felhasználók csapatok létrehozására és kezelésére használnak.**base_url:** `http://127.0.0.1:8000/api` vagy `http://127.0.0.1/Team-Sport/public/api`
 
 
 
@@ -14,7 +14,7 @@ Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilv
 
 
 
-- Authentikáció (register, login, logout, token kezelés)Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilvános elérhetőségét. Ennek a backendnek a fő célja, hogy kiszolgálja a frontendet, amelyet a felhasználók csapatok létrehozására és kezelésére használnak.## Funkciók:
+- Authentikáció (register, login, logout, token kezelés)Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilvános elérhetőségét. Ennek a backendnek a fő célja, hogy kiszolgálja a frontendet, amelyet a felhasználók csapatok létrehozására és kezelésére használnak.**base_url:** `http://127.0.0.1:8000/api` vagy `http://127.0.0.1/Team-Sport/public/api`**base_url:** `http://127.0.0.1:8000/api` vagy `http://127.0.0.1/Team-Sport/public/api`
 
 - Felhasználók regisztrálhatnak sportágukkal és tudásszintjükkel
 
@@ -22,1075 +22,2169 @@ Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilv
 
 - Bearer Token alapú biztonságos API védelem Laravel Sanctum-mal
 
-- Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)## Funkciók:• Authentikáció (register, login, logout, token kezelés)
+- Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)## Funkciók
 
 - Magyar lokalizáció (időzóna, faker adatok)
 
-• Felhasználók regisztrálhatnak sportágukkal és tudásszintjükkel
+
 
 ### A teszteléshez
 
-- 1 igazi user (mate@example.com / Mate123)• Authentikáció (register, login, logout, token kezelés)• Csapatok létrehozása, listázása, módosítása, törlése (CRUD)
+- Authentikáció (register, login, logout, token kezelés)Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilvános elérhetőségét. Ennek a backendnek a fő célja, hogy kiszolgálja a frontendet, amelyet a felhasználók csapatok létrehozására és kezelésére használnak.## Funkciók:
 
-- 10 fake user
+- 1 igazi user (mate@example.com / Mate123)
 
-- 10 fake csapat• Felhasználók regisztrálhatnak sportágukkal és tudásszintjükkel• Bearer Token alapú biztonságos API védelem Laravel Sanctum-mal
+- 10 fake user- Felhasználók regisztrálhatnak sportágukkal és tudásszintjükkel
 
-- Random tagságok csapatokban (captain, member, vice-captain szerepkörökkel)
+- 10 fake csapat
 
-• Csapatok létrehozása, listázása, módosítása, törlése (CRUD)• Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)
-
-Az adatbázis neve: `team_sport`
-
-• Bearer Token alapú biztonságos API védelem Laravel Sanctum-mal• Magyar lokalizáció (időzóna, faker adatok)
-
----
-
-• Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)• Átfogó tesztelés (27 automated test)
-
-## Végpontok
-
-• Magyar lokalizáció (időzóna, faker adatok)
-
-A `Content-Type` és az `Accept` header kulcsok mindig `application/json` formátumúak legyenek.
-
-### A teszteléshez:
-
-Érvénytelen vagy hiányzó token esetén a backendnek `401 Unauthorized` választ kell visszaadnia:
-
-### A teszteléshez:◦ 1 igazi user (mate@example.com / Mate123)
-
-```json
-
-Response: 401 Unauthorized◦ 1 igazi user (mate@example.com / Mate123)◦ 10 fake user
-
-{
-
-  "message": "Unauthenticated."◦ 10 fake user◦ 10 fake csapat
-
-}
-
-```◦ 10 fake csapat◦ Random tagságok csapatokban (captain, member, vice-captain szerepkörökkel)
+- Random tagságok csapatokban (captain, member, vice-captain szerepkörökkel)- Csapatok létrehozása, listázása, módosítása, törlése (CRUD)
 
 
 
-### Nem védett végpontok◦ Random tagságok csapatokban (captain, member, vice-captain szerepkörökkel)
+Az adatbázis neve: `team_sport`- Bearer Token alapú biztonságos API védelem Laravel Sanctum-mal
 
 
 
-- GET `/ping` - teszteléshez---
-
-- POST `/register` - regisztrációhoz
-
-- POST `/login` - belépéshezAz adatbázis neve: `team_sport`
+---- Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)## Funkciók:• Authentikáció (register, login, logout, token kezelés)
 
 
 
-### Védett végpontok (authentikáció szükséges)## Végpontok:
+## Végpontok- Magyar lokalizáció (időzóna, faker adatok)
 
 
 
-> Az innen következő végpontok autentikáltak, tehát a kérés headerében meg kell adni a tokent is:---
+A `Content-Type` és az `Accept` header kulcsok mindig `application/json` formátumúak legyenek.• Felhasználók regisztrálhatnak sportágukkal és tudásszintjükkel
 
 
 
-```httpA `Content-Type` és az `Accept` header kulcsok mindig `application/json` formátumúak legyenek.
-
-Authorization: Bearer 2|7Fbr79b5zn8RxMfOqfdzZ31SnGWvgDidjahbdRfL2a98cfd8
-
-```## Végpontok:
+Érvénytelen vagy hiányzó token esetén a backendnek `401 Unauthorized` választ kell visszaadnia:### A teszteléshez
 
 
 
-- POST `/logout` - kijelentkezésÉrvénytelen vagy hiányzó token esetén a backendnek `401 Unauthorized` választ kell visszaadnia:
+```json- 1 igazi user (mate@example.com / Mate123)• Authentikáció (register, login, logout, token kezelés)• Csapatok létrehozása, listázása, módosítása, törlése (CRUD)
 
-- GET `/me` - saját profil lekérése
+Response: 401 Unauthorized
 
-- GET `/teams` - csapatok listázásaA `Content-Type` és az `Accept` header kulcsok mindig `application/json` formátumúak legyenek.
-
-- POST `/teams` - csapat létrehozása
-
-- GET `/teams/{id}` - csapat részletei```json
-
-- PUT/PATCH `/teams/{id}` - csapat frissítése
-
-- PATCH `/teams/{id}/partial` - csapat részleges frissítéseÉrvénytelen vagy hiányzó token esetén a backendnek `401 Unauthorized` választ kell visszaadnia:Response: 401 Unauthorized
-
-- DELETE `/teams/{id}` - csapat törlése
-
-{
-
-### Hibák
-
-```json  "message": "Unauthenticated."
-
-- **401 Unauthorized** - A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token.
-
-- **404 Not Found** - A kért erőforrás nem található. Ezt a hibát akkor kell visszaadni, ha a kért csapat nem található.Response: 401 Unauthorized}
-
-- **422 Unprocessable Entity** - Validációs hibák esetén (pl. hiányzó vagy helytelen mezők).
-
-{```
-
----
+{- 10 fake user
 
   "message": "Unauthenticated."
 
-## Összefoglalva
+}- 10 fake csapat• Felhasználók regisztrálhatnak sportágukkal és tudásszintjükkel• Bearer Token alapú biztonságos API védelem Laravel Sanctum-mal
 
-}### Nem védett végpontok:
+```
 
-| Metódus | Végpont | Hozzáférés | Státusz kódok | Leírás |
+- Random tagságok csapatokban (captain, member, vice-captain szerepkörökkel)
 
-|---------|---------|------------|---------------|--------|```
+### Nem védett végpontok
 
-| GET | /ping | Nyilvános | 200 OK | API teszteléshez |
+• Csapatok létrehozása, listázása, módosítása, törlése (CRUD)• Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)
 
-| POST | /register | Nyilvános | 201 Created, 422 Unprocessable Entity | Új felhasználó regisztrációja |• GET `/ping` - teszteléshez
+- GET `/ping` - teszteléshez
 
-| POST | /login | Nyilvános | 200 OK, 422 Unprocessable Entity | Bejelentkezés e-maillel és jelszóval |
+- POST `/register` - regisztrációhozAz adatbázis neve: `team_sport`
 
-| POST | /logout | Hitelesített | 200 OK, 401 Unauthorized | Kijelentkezés |### Nem védett végpontok:• POST `/register` - regisztrációhoz
+- POST `/login` - belépéshez
 
-| GET | /me | Hitelesített | 200 OK, 401 Unauthorized | Saját profil lekérése |
+• Bearer Token alapú biztonságos API védelem Laravel Sanctum-mal• Magyar lokalizáció (időzóna, faker adatok)
 
-| GET | /teams | Hitelesített | 200 OK, 401 Unauthorized | Csapatok listázása |• POST `/login` - belépéshez
-
-| GET | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Egy csapat részletei |
-
-| POST | /teams | Hitelesített | 201 Created, 422 Unprocessable Entity, 401 Unauthorized | Csapat létrehozása |• GET `/ping` - teszteléshez
-
-| PUT/PATCH | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat frissítése |
-
-| PATCH | /teams/{id}/partial | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat részleges frissítése |• POST `/register` - regisztrációhoz### Védett végpontok (authentikáció szükséges):
-
-| DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése |
-
-• POST `/login` - belépéshez
+### Védett végpontok (authentikáció szükséges)
 
 ---
 
 > Az innen következő végpontok autentikáltak, tehát a kérés headerében meg kell adni a tokent is:
 
-## Adatbázis terv
-
-### Védett végpontok (authentikáció szükséges):
+• Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)• Átfogó tesztelés (27 automated test)
 
 ```
 
-┌──────────────────────┐     ┌─────────────────┐       ┌──────────────┐        ┌──────────┐```
-
-│personal_access_tokens│     │      users      │       │team_members  │        │  teams   │
-
-├──────────────────────┤     ├─────────────────┤       ├──────────────┤        ├──────────┤> Az innen következő végpontok autentikáltak, tehát a kérés headerében meg kell adni a tokent is:Authorization: "Bearer 2|7Fbr79b5zn8RxMfOqfdzZ31SnGWvgDidjahbdRfL2a98cfd8"
-
-│ id (PK)              │  ┌─→│ id (PK)         │1─┐    │ id (PK)      │     ┌─→│ id (PK)  │
-
-│ tokenable_id (FK)    │──┘  │ name            │  └───N│ user_id (FK) │     │  │ name     │```
-
-│ tokenable_type       │     │ email (unique)  │       │ team_id (FK) │N────┘  │ sport_   │
-
-│ name                 │     │ password        │       │ role         │        │  type    │```
-
-│ token (unique)       │     │ sport_type      │       │ joined_at    │        │ max_mem- │
-
-│ abilities            │     │ skill_level     │       │ created_at   │        │  bers    │Authorization: "Bearer 2|7Fbr79b5zn8RxMfOqfdzZ31SnGWvgDidjahbdRfL2a98cfd8"• POST `/logout` - kijelentkezés
-
-│ last_used_at         │     │ created_at      │       │ updated_at   │        │ created_ │
-
-│ expires_at           │     │ updated_at      │       └──────────────┘        │  at      │```• GET `/me` - saját profil lekérése
-
-│ created_at           │     └─────────────────┘                               │ updated_ │
-
-│ updated_at           │                                                        │  at      │• GET `/teams` - csapatok listázása
-
-└──────────────────────┘                                                        └──────────┘
-
-```• POST `/logout` - kijelentkezés• POST `/teams` - csapat létrehozása
-
-
-
----• GET `/me` - saját profil lekérése• GET `/teams/{id}` - csapat részletei
-
-
-
-# I. Modul - Struktúra kialakítása• GET `/teams` - csapatok listázása• PUT/PATCH `/teams/{id}` - csapat frissítése
-
-
-
-## 1. Telepítés• POST `/teams` - csapat létrehozása• PATCH `/teams/{id}/partial` - csapat részleges frissítése
-
-
-
-Projekt létrehozása, .env konfiguráció, sanctum telepítése, tesztútvonal• GET `/teams/{id}` - csapat részletei• DELETE `/teams/{id}` - csapat törlése
-
-
-
-```bash• PUT/PATCH `/teams/{id}` - csapat frissítése
-
-célhely> composer create-project laravel/laravel --prefer-dist Team-Sport
-
-célhely> cd Team-Sport• PATCH `/teams/{id}/partial` - csapat részleges frissítése### Hibák:
+Authorization: Bearer 2|7Fbr79b5zn8RxMfOqfdzZ31SnGWvgDidjahbdRfL2a98cfd8## Végpontok
 
 ```
 
-• DELETE `/teams/{id}` - csapat törlése
+• Magyar lokalizáció (időzóna, faker adatok)
 
-### .env fájl módosítása
+- POST `/logout` - kijelentkezés
 
-• **400 Bad Request:** A kérés hibás formátumú. Ezt a hibát akkor kell visszaadni, ha a kérés hibásan van formázva, vagy ha hiányoznak a szükséges mezők.
+- GET `/me` - saját profil lekéréseA `Content-Type` és az `Accept` header kulcsok mindig `application/json` formátumúak legyenek.
 
-```env
+- GET `/teams` - csapatok listázása
 
-DB_CONNECTION=mysql### Hibák:• **401 Unauthorized:** A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token vagy hiányzik.
+- POST `/teams` - csapat létrehozása### A teszteléshez:
 
-DB_HOST=127.0.0.1
+- GET `/teams/{id}` - csapat részletei
 
-DB_PORT=3306• **404 Not Found:** A kért erőforrás nem található. Ezt a hibát akkor kell visszaadni, ha a kért csapat nem található.
+- PUT/PATCH `/teams/{id}` - csapat frissítéseÉrvénytelen vagy hiányzó token esetén a backendnek `401 Unauthorized` választ kell visszaadnia:
 
-DB_DATABASE=team_sport
+- PATCH `/teams/{id}/partial` - csapat részleges frissítése
 
-DB_USERNAME=root• **401 Unauthorized:** A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token.• **422 Unprocessable Entity:** Validációs hibák esetén (pl. hiányzó vagy helytelen mezők).
-
-DB_PASSWORD=
-
-```• **404 Not Found:** A kért erőforrás nem található. Ezt a hibát akkor kell visszaadni, ha a kért csapat nem található.
+- DELETE `/teams/{id}` - csapat törlése### A teszteléshez:◦ 1 igazi user (mate@example.com / Mate123)
 
 
 
-### config/app.php módosítása• **422 Unprocessable Entity:** Validációs hibák esetén (pl. hiányzó vagy helytelen mezők).---
+### Hibák```json
 
 
 
-```php
+- **401 Unauthorized** - A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token.Response: 401 Unauthorized◦ 1 igazi user (mate@example.com / Mate123)◦ 10 fake user
 
-'timezone' => 'Europe/Budapest',
+- **404 Not Found** - A kért erőforrás nem található. Ezt a hibát akkor kell visszaadni, ha a kért csapat nem található.
 
-'locale' => 'hu',---### 4. Adatbázis beállítás
-
-'faker_locale' => 'hu_HU',
-
-```
+- **422 Unprocessable Entity** - Validációs hibák esetén (pl. hiányzó vagy helytelen mezők).{
 
 
 
-### Laravel Sanctum telepítése## ÖsszefoglalvaA `.env` fájlban:
+---  "message": "Unauthenticated."◦ 10 fake user◦ 10 fake csapat
 
 
 
-```bash```env
-
-Team-Sport> composer require laravel/sanctum
-
-Team-Sport> php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"| Metódus | Végpont | Hozzáférés | Státusz kódok | Leírás |APP_NAME="Team Sport API"
-
-Team-Sport> php artisan install:api
-
-```|---------|---------|------------|---------------|--------|APP_ENV=local
+## Összefoglalva}
 
 
 
-### routes/api.php| GET | /ping | Nyilvános | 200 OK | API teszteléshez |APP_DEBUG=true
+| Metódus | Végpont | Hozzáférés | Státusz kódok | Leírás |```◦ 10 fake csapat◦ Random tagságok csapatokban (captain, member, vice-captain szerepkörökkel)
+
+|---------|---------|------------|---------------|--------|
+
+| GET | /ping | Nyilvános | 200 OK | API teszteléshez |
+
+| POST | /register | Nyilvános | 201 Created, 422 Unprocessable Entity | Új felhasználó regisztrációja |
+
+| POST | /login | Nyilvános | 200 OK, 422 Unprocessable Entity | Bejelentkezés e-maillel és jelszóval |### Nem védett végpontok◦ Random tagságok csapatokban (captain, member, vice-captain szerepkörökkel)
+
+| POST | /logout | Hitelesített | 200 OK, 401 Unauthorized | Kijelentkezés |
+
+| GET | /me | Hitelesített | 200 OK, 401 Unauthorized | Saját profil lekérése |
+
+| GET | /teams | Hitelesített | 200 OK, 401 Unauthorized | Csapatok listázása |
+
+| GET | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Egy csapat részletei |- GET `/ping` - teszteléshez---
+
+| POST | /teams | Hitelesített | 201 Created, 422 Unprocessable Entity, 401 Unauthorized | Csapat létrehozása |
+
+| PUT/PATCH | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat frissítése |- POST `/register` - regisztrációhoz
+
+| PATCH | /teams/{id}/partial | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat részleges frissítése |
+
+| DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése |- POST `/login` - belépéshezAz adatbázis neve: `team_sport`
 
 
-
-```php| POST | /register | Nyilvános | 201 Created, 422 Unprocessable Entity | Új felhasználó regisztrációja |APP_TIMEZONE=Europe/Budapest
-
-use Illuminate\Support\Facades\Route;
-
-| POST | /login | Nyilvános | 200 OK, 422 Unprocessable Entity | Bejelentkezés e-maillel és jelszóval |APP_LOCALE=hu
-
-Route::get('/ping', function () {
-
-    return response()->json([| POST | /logout | Hitelesített | 200 OK, 401 Unauthorized | Kijelentkezés |APP_FAKER_LOCALE=hu_HU
-
-        'status' => 'success',
-
-        'message' => 'API is running',| GET | /me | Hitelesített | 200 OK, 401 Unauthorized | Saját profil lekérése |
-
-        'timestamp' => now()->toDateTimeString(),
-
-        'timezone' => config('app.timezone'),| GET | /teams | Hitelesített | 200 OK, 401 Unauthorized | Csapatok listázása |DB_CONNECTION=sqlite
-
-    ], 200);
-
-});| GET | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Egy csapat részletei |# DB_DATABASE=/absolute/path/to/database.sqlite
-
-```
-
-| POST | /teams | Hitelesített | 201 Created, 422 Unprocessable Entity, 401 Unauthorized | Csapat létrehozása |```
-
-### Teszt
-
-| PUT/PATCH | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat frissítése |
-
-**Szerver indítás:**
-
-| PATCH | /teams/{id}/partial | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat részleges frissítése |### 5. Adatbázis migrálás és seed
-
-```bash
-
-Team-Sport> php artisan serve| DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése |```bash
-
-```
-
-# Adatbázis táblák létrehozása
-
-**POSTMAN teszt:**
-
-- GET `http://127.0.0.1:8000/api/ping`---php artisan migrate
-
-
-
-**VAGY XAMPP:**
-
-- GET `http://127.0.0.1/Team-Sport/public/api/ping`
-
-## Adatbázis terv# Fake adatok feltöltése (11 user + 10 csapat)
 
 ---
 
-php artisan db:seed
 
-## 2. Modellek és migráció
 
-``````
+## Adatbázis terv### Védett végpontok (authentikáció szükséges)## Végpontok:
 
-### Ami már megvan
+
+
+```
 
 ┌──────────────────────┐     ┌─────────────────┐       ┌──────────────┐        ┌──────────┐
 
-Ehhez nem is kell nyúlni
+│personal_access_tokens│     │      users      │       │team_members  │        │  teams   │> Az innen következő végpontok autentikáltak, tehát a kérés headerében meg kell adni a tokent is:---
 
-│personal_access_tokens│     │      users      │       │team_members  │        │  teams   │### 6. Szerver indítás
+├──────────────────────┤     ├─────────────────┤       ├──────────────┤        ├──────────┤
 
-**database/migrations/?_create_personal_access_tokens_table.php:**
+│ id (PK)              │  ┌─→│ id (PK)         │1─┐    │ id (PK)      │     ┌─→│ id (PK)  │
 
-├──────────────────────┤     ├─────────────────┤       ├──────────────┤        ├──────────┤```bash
+│ tokenable_id (FK)    │──┘  │ name            │  └───N│ user_id (FK) │     │  │ name     │
 
-```php
+│ tokenable_type       │     │ email (unique)  │       │ team_id (FK) │N────┘  │ sport_   │```httpA `Content-Type` és az `Accept` header kulcsok mindig `application/json` formátumúak legyenek.
 
-Schema::create('personal_access_tokens', function (Blueprint $table) {│ id (PK)              │  ┌─→│ id (PK)         │1─┐    │ id (PK)      │     ┌─→│ id (PK)  │php artisan serve
+│ name                 │     │ password        │       │ role         │        │  type    │
 
-    $table->id();
+│ token (unique)       │     │ sport_type      │       │ joined_at    │        │ max_mem- │Authorization: Bearer 2|7Fbr79b5zn8RxMfOqfdzZ31SnGWvgDidjahbdRfL2a98cfd8
 
-    $table->morphs('tokenable'); // user kapcsolat│ tokenable_id (FK)    │──┘  │ name            │  └───N│ user_id (FK) │     │  │ name     │```
+│ abilities            │     │ skill_level     │       │ created_at   │        │  bers    │
 
-    $table->string('name');
+│ last_used_at         │     │ created_at      │       │ updated_at   │        │ created_ │```## Végpontok:
 
-    $table->string('token', 64)->unique();│ tokenable_type       │     │ email (unique)  │       │ team_id (FK) │N────┘  │ sport_   │
+│ expires_at           │     │ updated_at      │       └──────────────┘        │  at      │
 
-    $table->text('abilities')->nullable();
+│ created_at           │     └─────────────────┘                               │ updated_ │
 
-    $table->timestamp('last_used_at')->nullable();│ name                 │     │ password        │       │ role         │        │  type    │Az API elérhető: `http://localhost:8000/api`
+│ updated_at           │                                                        │  at      │
 
-    $table->timestamp('expires_at')->nullable();
-
-    $table->timestamps();│ token (unique)       │     │ sport_type      │       │ joined_at    │        │ max_mem- │
-
-});
-
-```│ abilities            │     │ skill_level     │       │ created_at   │        │  bers    │---
-
-
-
-### Ezt módosítani kell│ last_used_at         │     │ created_at      │       │ updated_at   │        │ created_ │
-
-
-
-**database/migrations/0001_01_01_000000_create_users_table.php:**│ expires_at           │     │ updated_at      │       └──────────────┘        │  at      │## Adatbázis Struktúra
-
-
-
-```php│ created_at           │     └─────────────────┘                               │ updated_ │
-
-Schema::create('users', function (Blueprint $table) {
-
-    $table->id();│ updated_at           │                                                        │  at      │### Táblák áttekintése
-
-    $table->string('name');
-
-    $table->string('email')->unique();└──────────────────────┘                                                        └──────────┘
-
-    $table->timestamp('email_verified_at')->nullable();
-
-    $table->string('password');```#### 1. `users` tábla
-
-    // ezt bele kell írni
-
-    $table->string('sport_type')->nullable();Felhasználók adatait tárolja.
-
-    $table->string('skill_level')->nullable();
-
-    // ezeket bele kell írni---
-
-    $table->rememberToken();
-
-    $table->timestamps();| Mező | Típus | Leírás |
-
-});
-
-```# I. Modul - Struktúra kialakítása|------|-------|--------|
-
-
-
-### app/Models/User.php (módosítani kell)| id | bigint (PK) | Egyedi azonosító |
-
-
-
-```php## 1. Telepítés (projekt létrehozása, .env konfiguráció, sanctum telepítése, tesztútvonal)| name | varchar(255) | Felhasználó neve |
-
-<?php
-
-| email | varchar(255) | Email cím (egyedi) |
-
-namespace App\Models;
-
-`célhely>composer create-project laravel/laravel --prefer-dist Team-Sport`| password | varchar(255) | Hash-elt jelszó |
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-use Illuminate\Foundation\Auth\User as Authenticatable;| sport_type | varchar(255) | Preferált sport típus |
-
-use Illuminate\Notifications\Notifiable;
-
-use Illuminate\Database\Eloquent\Relations\HasMany;`célhely>cd Team-Sport`| skill_level | varchar(255) | Képzettségi szint |
-
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-use Laravel\Sanctum\HasApiTokens;| email_verified_at | timestamp | Email megerősítés ideje |
-
-
-
-class User extends Authenticatable**.env fájl módosítása:**| remember_token | varchar(100) | Laravel session token |
-
-{
-
-    use HasFactory, Notifiable, HasApiTokens;| created_at | timestamp | Létrehozás időpontja |
-
-
-
-    protected $fillable = [```env| updated_at | timestamp | Módosítás időpontja |
-
-        'name',
-
-        'email',DB_CONNECTION=mysql
-
-        'password',
-
-        'sport_type',DB_HOST=127.0.0.1**Kapcsolatok:**
-
-        'skill_level',
-
-    ];DB_PORT=3306- `hasMany` → `team_members`
-
-
-
-    // amikor a modellt JSON formátumban adod vissza ne jelenjenek meg a következő mezők:DB_DATABASE=team_sport- `belongsToMany` → `teams` (through team_members)
-
-    protected $hidden = [
-
-        'password',DB_USERNAME=root
-
-        'remember_token',
-
-    ];DB_PASSWORD=#### 2. `teams` tábla
-
-
-
-    protected function casts(): array```Csapatok adatait tárolja.
-
-    {
-
-        return [
-
-            'email_verified_at' => 'datetime',
-
-            'password' => 'hashed',**config/app.php módosítása:**| Mező | Típus | Leírás |
-
-        ];
-
-    }|------|-------|--------|
-
-
-
-    public function teamMembers(): HasMany```php| id | bigint (PK) | Egyedi azonosító |
-
-    {
-
-        return $this->hasMany(TeamMember::class);'timezone' => 'Europe/Budapest',| name | varchar(255) | Csapat neve |
-
-    }
-
-'locale' => 'hu',| sport_type | varchar(255) | Sport típus |
-
-    public function teams(): BelongsToMany
-
-    {'faker_locale' => 'hu_HU',| max_members | integer | Maximum tagok száma (default: 10) |
-
-        return $this->belongsToMany(Team::class, 'team_members')
-
-            ->withPivot('joined_at', 'role')```| created_at | timestamp | Létrehozás |
-
-            ->withTimestamps();
-
-    }| updated_at | timestamp | Módosítás |
-
-}
-
-````Team-Sport>composer require laravel/sanctum`
-
-
-
-### Team model létrehozása**Kapcsolatok:**
-
-
-
-```bash`Team-Sport>php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"`- `hasMany` → `team_members`
-
-Team-Sport> php artisan make:model Team -m
-
-```- `belongsToMany` → `users` (through team_members)
-
-
-
-**database/migrations/?_create_teams_table.php (módosítani kell):**`Team-Sport>php artisan install:api`
-
-
-
-```php#### 3. `team_members` tábla (pivot)
-
-<?php
-
-**routes/api.php:**User és Team közötti kapcsolatot tárolja.
-
-use Illuminate\Database\Migrations\Migration;
-
-use Illuminate\Database\Schema\Blueprint;
-
-use Illuminate\Support\Facades\Schema;
-
-```php| Mező | Típus | Leírás |
-
-return new class extends Migration
-
-{use Illuminate\Support\Facades\Route;|------|-------|--------|
-
-    public function up(): void
-
-    {| id | bigint (PK) | Egyedi azonosító |
-
-        Schema::create('teams', function (Blueprint $table) {
-
-            $table->id();Route::get('/ping', function () {| user_id | bigint (FK) | User azonosító |
-
-            $table->string('name');
-
-            $table->string('sport_type');    return response()->json([| team_id | bigint (FK) | Csapat azonosító |
-
-            $table->integer('max_members')->default(10);
-
-            $table->timestamps();        'status' => 'success',| role | varchar(50) | Szerep (member/captain) |
-
-        });
-
-    }        'message' => 'API is running',| joined_at | timestamp | Csatlakozás időpontja |
-
-
-
-    public function down(): void        'timestamp' => now()->toDateTimeString(),
-
-    {
-
-        Schema::dropIfExists('teams');        'timezone' => config('app.timezone'),**Foreign Keys:**
-
-    }
-
-};    ], 200);- `user_id` → `users.id` (CASCADE delete)
+└──────────────────────┘                                                        └──────────┘- POST `/logout` - kijelentkezésÉrvénytelen vagy hiányzó token esetén a backendnek `401 Unauthorized` választ kell visszaadnia:
 
 ```
 
-});- `team_id` → `teams.id` (CASCADE delete)
-
-**app/Models/Team.php (módosítani kell):**
-
-```
-
-```php
-
-<?php#### 4. `personal_access_tokens` tábla
-
-
-
-namespace App\Models;### TesztSanctum Bearer tokenek tárolása.
-
-
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Relations\HasMany;**serve:**| Mező | Típus | Leírás |
-
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-
-|------|-------|--------|
-
-class Team extends Model
-
-{`Team-Sport>php artisan serve`| id | bigint (PK) | Token azonosító |
-
-    use HasFactory;
-
-    | tokenable_type | varchar(255) | Model típus (User) |
-
-    protected $fillable = [
-
-        'name',> POSTMAN teszt: GET http://127.0.0.1:8000/api/ping| tokenable_id | bigint | User ID |
-
-        'sport_type',
-
-        'max_members',| name | varchar(255) | Token neve |
-
-    ];
-
-**VAGY XAMPP:**| token | varchar(64) | Hash-elt token (egyedi) |
-
-    public function teamMembers(): HasMany
-
-    {| abilities | text | Token jogosultságok |
-
-        return $this->hasMany(TeamMember::class);
-
-    }> POSTMAN teszt: GET http://127.0.0.1/Team-Sport/public/api/ping| last_used_at | timestamp | Utolsó használat |
-
-
-
-    public function users(): BelongsToMany| expires_at | timestamp | Lejárat |
-
-    {
-
-        return $this->belongsToMany(User::class, 'team_members')---| created_at | timestamp | Létrehozás |
-
-            ->withPivot('joined_at', 'role')
-
-            ->withTimestamps();| updated_at | timestamp | Módosítás |
-
-    }
-
-}## 2. Modellek és migráció (sémák)
-
-```
-
-### Adatbázis Diagram
-
-### TeamMember model létrehozása
-
-**Ami már megvan (database/migrations):**
-
-```bash
-
-Team-Sport> php artisan make:model TeamMember -m```
-
-```
-
-Ehhez nem is kell nyúlni:┌─────────────┐         ┌──────────────────┐         ┌─────────────┐
-
-**database/migrations/?_create_team_members_table.php (módosítani kell):**
-
-│   users     │         │  team_members    │         │    teams    │
-
-```php
-
-<?php```php├─────────────┤         ├──────────────────┤         ├─────────────┤
-
-
-
-use Illuminate\Database\Migrations\Migration;Schema::create('personal_access_tokens', function (Blueprint $table) {│ id (PK)     │────┐    │ id (PK)          │    ┌────│ id (PK)     │
-
-use Illuminate\Database\Schema\Blueprint;
-
-use Illuminate\Support\Facades\Schema;    $table->id();│ name        │    └───→│ user_id (FK)     │    │    │ name        │
-
-
-
-return new class extends Migration    $table->morphs('tokenable'); // user kapcsolat│ email       │         │ team_id (FK)     │←───┘    │ sport_type  │
-
-{
-
-    public function up(): void    $table->string('name');│ password    │         │ role             │         │ max_members │
-
-    {
-
-        Schema::create('team_members', function (Blueprint $table) {    $table->string('token', 64)->unique();│ sport_type  │         │ joined_at        │         │ created_at  │
-
-            $table->id();
-
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');    $table->text('abilities')->nullable();│ skill_level │         │                  │         │ updated_at  │
-
-            // a user_id mező a users tábla id oszlopára fog hivatkozni
-
-            $table->foreignId('team_id')->constrained()->onDelete('cascade');    $table->timestamp('last_used_at')->nullable();│ created_at  │         └──────────────────┘         └─────────────┘
-
-            $table->timestamp('joined_at')->useCurrent();
-
-            $table->string('role')->default('member'); // captain, member, vice-captain    $table->timestamp('expires_at')->nullable();│ updated_at  │
-
-            $table->timestamps();
-
-        });    $table->timestamps();└─────────────┘
-
-    }
-
-});```
-
-    public function down(): void
-
-    {```
-
-        Schema::dropIfExists('team_members');
-
-    }### Seed Adatok
-
-};
-
-```**Ezt módosítani kell:**
-
-
-
-**app/Models/TeamMember.php (módosítani kell):**A `php artisan db:seed` parancs fut:
-
-
-
-```php```php
-
-<?php
-
-Schema::create('users', function (Blueprint $table) {**Users (11 db):**
-
-namespace App\Models;
-
-    $table->id();- 1 valódi user: Máté (mate@example.com / Mate123)
-
-use Illuminate\Database\Eloquent\Model;
-
-use Illuminate\Database\Eloquent\Relations\BelongsTo;    $table->string('name');- 10 faker user magyar nevekkel (jelszó: password)
-
-
-
-class TeamMember extends Model    $table->string('email')->unique();
-
-{
-
-    protected $fillable = [    $table->timestamp('email_verified_at')->nullable();**Teams (10 db):**
-
-        'user_id',
-
-        'team_id',    $table->string('password');- Random generált csapatnevek (pl: "Piros Warriors", "Kék Tigrisek")
-
-        'joined_at',
-
-        'role',    // ezt bele kell írni- Random sport típusok (football, basketball, volleyball, stb)
-
-    ];
-
-    $table->string('sport_type')->nullable();
-
-    protected $casts = [
-
-        'joined_at' => 'datetime',    $table->string('skill_level')->nullable();**Team Members (~38 kapcsolat):**
-
-    ];
-
-    // ezeket bele kell írni- Minden csapatban 2-5 tag random
-
-    public function user(): BelongsTo
-
-    {    $table->rememberToken();- Máté 2 csapatban captain
-
-        return $this->belongsTo(User::class);
-
-    }    $table->timestamps();
-
-
-
-    public function team(): BelongsTo});---
-
-    {
-
-        return $this->belongsTo(Team::class);```
-
-    }
-
-}## API Végpontok
-
-```
-
-**app/Models/User.php (módosítani kell):**
-
-### Migráció futtatása
-
-### Base URL
-
-```bash
-
-Team-Sport> php artisan migrate```php```
-
-```
-
-namespace App\Models;http://localhost:8000/api
+- GET `/me` - saját profil lekérése
 
 ---
 
+- GET `/teams` - csapatok listázásaA `Content-Type` és az `Accept` header kulcsok mindig `application/json` formátumúak legyenek.
+
+# I. Modul - Struktúra kialakítása
+
+- POST `/teams` - csapat létrehozása
+
+## 1. Telepítés
+
+- GET `/teams/{id}` - csapat részletei```json
+
+Projekt létrehozása, .env konfiguráció, sanctum telepítése, tesztútvonal
+
+- PUT/PATCH `/teams/{id}` - csapat frissítése
+
+```powershell
+
+composer create-project laravel/laravel --prefer-dist Team-Sport- PATCH `/teams/{id}/partial` - csapat részleges frissítéseÉrvénytelen vagy hiányzó token esetén a backendnek `401 Unauthorized` választ kell visszaadnia:Response: 401 Unauthorized
+
+cd Team-Sport
+
+```- DELETE `/teams/{id}` - csapat törlése
+
+
+
+### .env fájl módosítása{
+
+
+
+```properties### Hibák
+
+DB_CONNECTION=mysql
+
+DB_HOST=127.0.0.1```json  "message": "Unauthenticated."
+
+DB_PORT=3306
+
+DB_DATABASE=team_sport- **401 Unauthorized** - A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token.
+
+DB_USERNAME=root
+
+DB_PASSWORD=- **404 Not Found** - A kért erőforrás nem található. Ezt a hibát akkor kell visszaadni, ha a kért csapat nem található.Response: 401 Unauthorized}
+
 ```
 
-## 3. Seeding
+- **422 Unprocessable Entity** - Validációs hibák esetén (pl. hiányzó vagy helytelen mezők).
+
+### config/app.php módosítása
+
+{```
+
+```php
+
+'timezone' => 'Europe/Budapest',---
+
+'locale' => 'hu',
+
+'faker_locale' => 'hu_HU',  "message": "Unauthenticated."
+
+```
+
+## Összefoglalva
+
+### Laravel Sanctum telepítése
+
+}### Nem védett végpontok:
+
+```powershell
+
+composer require laravel/sanctum| Metódus | Végpont | Hozzáférés | Státusz kódok | Leírás |
+
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+php artisan install:api|---------|---------|------------|---------------|--------|```
+
+```
+
+| GET | /ping | Nyilvános | 200 OK | API teszteléshez |
+
+### routes/api.php
+
+| POST | /register | Nyilvános | 201 Created, 422 Unprocessable Entity | Új felhasználó regisztrációja |• GET `/ping` - teszteléshez
+
+```php
+
+use Illuminate\Support\Facades\Route;| POST | /login | Nyilvános | 200 OK, 422 Unprocessable Entity | Bejelentkezés e-maillel és jelszóval |
+
+
+
+Route::get('/ping', function () {| POST | /logout | Hitelesített | 200 OK, 401 Unauthorized | Kijelentkezés |### Nem védett végpontok:• POST `/register` - regisztrációhoz
+
+    return response()->json([
+
+        'status' => 'success',| GET | /me | Hitelesített | 200 OK, 401 Unauthorized | Saját profil lekérése |
+
+        'message' => 'API is running',
+
+        'timestamp' => now()->toDateTimeString(),| GET | /teams | Hitelesített | 200 OK, 401 Unauthorized | Csapatok listázása |• POST `/login` - belépéshez
+
+        'timezone' => config('app.timezone'),
+
+    ], 200);| GET | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Egy csapat részletei |
+
+});
+
+```| POST | /teams | Hitelesített | 201 Created, 422 Unprocessable Entity, 401 Unauthorized | Csapat létrehozása |• GET `/ping` - teszteléshez
+
+
+
+### Teszt| PUT/PATCH | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat frissítése |
+
+
+
+**Szerver indítás:**| PATCH | /teams/{id}/partial | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat részleges frissítése |• POST `/register` - regisztrációhoz### Védett végpontok (authentikáció szükséges):
+
+
+
+```powershell| DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése |
+
+php artisan serve
+
+```• POST `/login` - belépéshez
+
+
+
+**POSTMAN teszt:**---
+
+- GET `http://127.0.0.1:8000/api/ping`
+
+> Az innen következő végpontok autentikáltak, tehát a kérés headerében meg kell adni a tokent is:
+
+**VAGY XAMPP:**
+
+- GET `http://127.0.0.1/Team-Sport/public/api/ping`## Adatbázis terv
+
+
+
+---### Védett végpontok (authentikáció szükséges):
+
+
+
+## 2. Modellek és migráció```
+
+
+
+### Ami már megvan┌──────────────────────┐     ┌─────────────────┐       ┌──────────────┐        ┌──────────┐```
+
+
+
+Ehhez nem is kell nyúlni│personal_access_tokens│     │      users      │       │team_members  │        │  teams   │
+
+
+
+**database/migrations/?_create_personal_access_tokens_table.php:**├──────────────────────┤     ├─────────────────┤       ├──────────────┤        ├──────────┤> Az innen következő végpontok autentikáltak, tehát a kérés headerében meg kell adni a tokent is:Authorization: "Bearer 2|7Fbr79b5zn8RxMfOqfdzZ31SnGWvgDidjahbdRfL2a98cfd8"
+
+
+
+```php│ id (PK)              │  ┌─→│ id (PK)         │1─┐    │ id (PK)      │     ┌─→│ id (PK)  │
+
+Schema::create('personal_access_tokens', function (Blueprint $table) {
+
+    $table->id();│ tokenable_id (FK)    │──┘  │ name            │  └───N│ user_id (FK) │     │  │ name     │```
+
+    $table->morphs('tokenable'); // user kapcsolat
+
+    $table->string('name');│ tokenable_type       │     │ email (unique)  │       │ team_id (FK) │N────┘  │ sport_   │
+
+    $table->string('token', 64)->unique();
+
+    $table->text('abilities')->nullable();│ name                 │     │ password        │       │ role         │        │  type    │```
+
+    $table->timestamp('last_used_at')->nullable();
+
+    $table->timestamp('expires_at')->nullable();│ token (unique)       │     │ sport_type      │       │ joined_at    │        │ max_mem- │
+
+    $table->timestamps();
+
+});│ abilities            │     │ skill_level     │       │ created_at   │        │  bers    │Authorization: "Bearer 2|7Fbr79b5zn8RxMfOqfdzZ31SnGWvgDidjahbdRfL2a98cfd8"• POST `/logout` - kijelentkezés
+
+```
+
+│ last_used_at         │     │ created_at      │       │ updated_at   │        │ created_ │
+
+### Ezt módosítani kell
+
+│ expires_at           │     │ updated_at      │       └──────────────┘        │  at      │```• GET `/me` - saját profil lekérése
+
+**database/migrations/0001_01_01_000000_create_users_table.php:**
+
+│ created_at           │     └─────────────────┘                               │ updated_ │
+
+```php
+
+Schema::create('users', function (Blueprint $table) {│ updated_at           │                                                        │  at      │• GET `/teams` - csapatok listázása
+
+    $table->id();
+
+    $table->string('name');└──────────────────────┘                                                        └──────────┘
+
+    $table->string('email')->unique();
+
+    $table->timestamp('email_verified_at')->nullable();```• POST `/logout` - kijelentkezés• POST `/teams` - csapat létrehozása
+
+    $table->string('password');
+
+    // ezt bele kell írni
+
+    $table->string('sport_type')->nullable();
+
+    $table->string('skill_level')->nullable();---• GET `/me` - saját profil lekérése• GET `/teams/{id}` - csapat részletei
+
+    // ezeket bele kell írni
+
+    $table->rememberToken();
+
+    $table->timestamps();
+
+});# I. Modul - Struktúra kialakítása• GET `/teams` - csapatok listázása• PUT/PATCH `/teams/{id}` - csapat frissítése
+
+```
+
+
+
+### app/Models/User.php (módosítani kell)
+
+## 1. Telepítés• POST `/teams` - csapat létrehozása• PATCH `/teams/{id}/partial` - csapat részleges frissítése
+
+```php
+
+<?php
+
+
+
+namespace App\Models;Projekt létrehozása, .env konfiguráció, sanctum telepítése, tesztútvonal• GET `/teams/{id}` - csapat részletei• DELETE `/teams/{id}` - csapat törlése
+
+
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-Factory és seederek létrehozása
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;### Végpontok összefoglalása
+use Illuminate\Notifications\Notifiable;```bash• PUT/PATCH `/teams/{id}` - csapat frissítése
 
-### database/factories/UserFactory.php (módosítása)
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;célhely> composer create-project laravel/laravel --prefer-dist Team-Sport
 
-```php
+use Laravel\Sanctum\HasApiTokens;
 
-<?phpuse Illuminate\Database\Eloquent\Relations\HasMany;| Metódus | Végpont | Auth | Leírás |
+célhely> cd Team-Sport• PATCH `/teams/{id}/partial` - csapat részleges frissítése### Hibák:
+
+class User extends Authenticatable
+
+{```
+
+    use HasFactory, Notifiable, HasApiTokens;
+
+• DELETE `/teams/{id}` - csapat törlése
+
+    protected $fillable = [
+
+        'name',### .env fájl módosítása
+
+        'email',
+
+        'password',• **400 Bad Request:** A kérés hibás formátumú. Ezt a hibát akkor kell visszaadni, ha a kérés hibásan van formázva, vagy ha hiányoznak a szükséges mezők.
+
+        'sport_type',
+
+        'skill_level',```env
+
+    ];
+
+DB_CONNECTION=mysql### Hibák:• **401 Unauthorized:** A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token vagy hiányzik.
+
+    // amikor a modellt JSON formátumban adod vissza ne jelenjenek meg a következő mezők:
+
+    protected $hidden = [DB_HOST=127.0.0.1
+
+        'password',
+
+        'remember_token',DB_PORT=3306• **404 Not Found:** A kért erőforrás nem található. Ezt a hibát akkor kell visszaadni, ha a kért csapat nem található.
+
+    ];
+
+DB_DATABASE=team_sport
+
+    protected function casts(): array
+
+    {DB_USERNAME=root• **401 Unauthorized:** A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token.• **422 Unprocessable Entity:** Validációs hibák esetén (pl. hiányzó vagy helytelen mezők).
+
+        return [
+
+            'email_verified_at' => 'datetime',DB_PASSWORD=
+
+            'password' => 'hashed',
+
+        ];```• **404 Not Found:** A kért erőforrás nem található. Ezt a hibát akkor kell visszaadni, ha a kért csapat nem található.
+
+    }
 
 
 
-namespace Database\Factories;use Illuminate\Database\Eloquent\Relations\BelongsToMany;|---------|---------|------|--------|
+    public function teamMembers(): HasMany
+
+    {### config/app.php módosítása• **422 Unprocessable Entity:** Validációs hibák esetén (pl. hiányzó vagy helytelen mezők).---
+
+        return $this->hasMany(TeamMember::class);
+
+    }
 
 
 
-use Illuminate\Database\Eloquent\Factories\Factory;use Laravel\Sanctum\HasApiTokens;| GET | /ping | Nem | API health check |
-
-use Illuminate\Support\Facades\Hash;
-
-use App\Models\User;| POST | /register | Nem | Regisztráció |
-
-
-
-class UserFactory extends Factoryclass User extends Authenticatable| POST | /login | Nem | Bejelentkezés |
-
-{
-
-    protected $model = User::class;{| POST | /logout | Igen | Kijelentkezés |
-
-
-
-    public function definition()    use HasFactory, Notifiable, HasApiTokens;| GET | /me | Igen | Saját adatok |
+    public function teams(): BelongsToMany```php
 
     {
 
-        $this->faker = \Faker\Factory::create('hu_HU'); // magyar nevekhez| GET | /teams | Igen | Csapatok listája |
+        return $this->belongsToMany(Team::class, 'team_members')'timezone' => 'Europe/Budapest',
 
+            ->withPivot('joined_at', 'role')
 
-
-        return [    protected $fillable = [| POST | /teams | Igen | Új csapat |
-
-            'name' => $this->faker->firstName . ' ' . $this->faker->lastName, // magyaros teljes név
-
-            'email' => $this->faker->unique()->safeEmail(),        'name',| GET | /teams/{id} | Igen | Egy csapat |
-
-            'password' => Hash::make('password'), // minden user jelszava: password
-
-            'sport_type' => $this->faker->randomElement(['football', 'basketball', 'volleyball', 'tennis']),        'email',| PUT | /teams/{id} | Igen | Teljes frissítés |
-
-            'skill_level' => $this->faker->randomElement(['beginner', 'intermediate', 'advanced', 'expert']),
-
-        ];        'password',| PATCH | /teams/{id} | Igen | Részleges frissítés |
+            ->withTimestamps();'locale' => 'hu',---### 4. Adatbázis beállítás
 
     }
 
-}        'sport_type',| DELETE | /teams/{id} | Igen | Törlés |
+}'faker_locale' => 'hu_HU',
 
 ```
 
-        'skill_level',
+```
 
-### TeamFactory létrehozása
+### Team model létrehozása
 
-    ];---
 
-```bash
 
-Team-Sport> php artisan make:factory TeamFactory
+```powershell
+
+php artisan make:model Team -m### Laravel Sanctum telepítése## ÖsszefoglalvaA `.env` fájlban:
 
 ```
 
-    // amikor a modellt JSON formátumban adod vissza ne jelenjenek meg a következő mezők:### 1. Health Check - API státusz ellenőrzés
 
-**database/factories/TeamFactory.php (módosítása):**
 
-    protected $hidden = [
+**database/migrations/?_create_teams_table.php (módosítani kell):**
+
+```bash```env
 
 ```php
 
-<?php        'password',**Endpoint:**
+<?phpTeam-Sport> composer require laravel/sanctum
 
 
 
-namespace Database\Factories;        'remember_token',```http
+use Illuminate\Database\Migrations\Migration;Team-Sport> php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"| Metódus | Végpont | Hozzáférés | Státusz kódok | Leírás |APP_NAME="Team Sport API"
+
+use Illuminate\Database\Schema\Blueprint;
+
+use Illuminate\Support\Facades\Schema;Team-Sport> php artisan install:api
 
 
 
-use Illuminate\Database\Eloquent\Factories\Factory;    ];GET /api/ping
+return new class extends Migration```|---------|---------|------------|---------------|--------|APP_ENV=local
 
-use App\Models\Team;
+{
 
-```
+    public function up(): void
 
-class TeamFactory extends Factory
+    {
 
-{    protected function casts(): array
+        Schema::create('teams', function (Blueprint $table) {### routes/api.php| GET | /ping | Nyilvános | 200 OK | API teszteléshez |APP_DEBUG=true
 
-    protected $model = Team::class;
+            $table->id();
 
-    {**Auth:** Nem kell token
+            $table->string('name');
 
-    public function definition(): array
+            $table->string('sport_type');
 
-    {        return [
+            $table->integer('max_members')->default(10);```php| POST | /register | Nyilvános | 201 Created, 422 Unprocessable Entity | Új felhasználó regisztrációja |APP_TIMEZONE=Europe/Budapest
 
-        $this->faker = \Faker\Factory::create('hu_HU');
+            $table->timestamps();
 
-                    'email_verified_at' => 'datetime',**Válasz (200):**
-
-        $colors = ['Piros', 'Kék', 'Zöld', 'Sárga', 'Fekete', 'Fehér'];
-
-        $animals = ['Tigrisek', 'Warriors', 'Dragons', 'Eagles', 'Lions', 'Sharks'];            'password' => 'hashed',```json
-
-        
-
-        return [        ];{
-
-            'name' => $this->faker->randomElement($colors) . ' ' . $this->faker->randomElement($animals),
-
-            'sport_type' => $this->faker->randomElement(['football', 'basketball', 'volleyball', 'tennis']),    }  "status": "success",
-
-            'max_members' => $this->faker->numberBetween(8, 20),
-
-        ];  "message": "API is running",
+        });use Illuminate\Support\Facades\Route;
 
     }
 
-}    public function teamMembers(): HasMany  "timestamp": "2025-12-04 10:30:00",
+| POST | /login | Nyilvános | 200 OK, 422 Unprocessable Entity | Bejelentkezés e-maillel és jelszóval |APP_LOCALE=hu
+
+    public function down(): void
+
+    {Route::get('/ping', function () {
+
+        Schema::dropIfExists('teams');
+
+    }    return response()->json([| POST | /logout | Hitelesített | 200 OK, 401 Unauthorized | Kijelentkezés |APP_FAKER_LOCALE=hu_HU
+
+};
+
+```        'status' => 'success',
+
+
+
+**app/Models/Team.php (módosítani kell):**        'message' => 'API is running',| GET | /me | Hitelesített | 200 OK, 401 Unauthorized | Saját profil lekérése |
+
+
+
+```php        'timestamp' => now()->toDateTimeString(),
+
+<?php
+
+        'timezone' => config('app.timezone'),| GET | /teams | Hitelesített | 200 OK, 401 Unauthorized | Csapatok listázása |DB_CONNECTION=sqlite
+
+namespace App\Models;
+
+    ], 200);
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use Illuminate\Database\Eloquent\Model;});| GET | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Egy csapat részletei |# DB_DATABASE=/absolute/path/to/database.sqlite
+
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;```
+
+
+
+class Team extends Model| POST | /teams | Hitelesített | 201 Created, 422 Unprocessable Entity, 401 Unauthorized | Csapat létrehozása |```
+
+{
+
+    use HasFactory;### Teszt
+
+    
+
+    protected $fillable = [| PUT/PATCH | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat frissítése |
+
+        'name',
+
+        'sport_type',**Szerver indítás:**
+
+        'max_members',
+
+    ];| PATCH | /teams/{id}/partial | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat részleges frissítése |### 5. Adatbázis migrálás és seed
+
+
+
+    public function teamMembers(): HasMany```bash
+
+    {
+
+        return $this->hasMany(TeamMember::class);Team-Sport> php artisan serve| DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése |```bash
+
+    }
 
 ```
 
-    {  "timezone": "Europe/Budapest"
+    public function users(): BelongsToMany
 
-### TeamSeeder létrehozása
+    {# Adatbázis táblák létrehozása
 
-        return $this->hasMany(TeamMember::class);}
+        return $this->belongsToMany(User::class, 'team_members')
 
-```bash
+            ->withPivot('joined_at', 'role')**POSTMAN teszt:**
 
-Team-Sport> php artisan make:seeder TeamSeeder    }```
+            ->withTimestamps();
+
+    }- GET `http://127.0.0.1:8000/api/ping`---php artisan migrate
+
+}
 
 ```
 
 
 
-**database/seeders/TeamSeeder.php (módosítása):**
+### TeamMember model létrehozása**VAGY XAMPP:**
 
-    public function teams(): BelongsToMany**Mire jó:** Gyors ellenőrzés, hogy az API működik-e.
+
+
+```powershell- GET `http://127.0.0.1/Team-Sport/public/api/ping`
+
+php artisan make:model TeamMember -m
+
+```## Adatbázis terv# Fake adatok feltöltése (11 user + 10 csapat)
+
+
+
+**database/migrations/?_create_team_members_table.php (módosítani kell):**---
+
+
+
+```phpphp artisan db:seed
+
+<?php
+
+## 2. Modellek és migráció
+
+use Illuminate\Database\Migrations\Migration;
+
+use Illuminate\Database\Schema\Blueprint;``````
+
+use Illuminate\Support\Facades\Schema;
+
+### Ami már megvan
+
+return new class extends Migration
+
+{┌──────────────────────┐     ┌─────────────────┐       ┌──────────────┐        ┌──────────┐
+
+    public function up(): void
+
+    {Ehhez nem is kell nyúlni
+
+        Schema::create('team_members', function (Blueprint $table) {
+
+            $table->id();│personal_access_tokens│     │      users      │       │team_members  │        │  teams   │### 6. Szerver indítás
+
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
+            // a user_id mező a users tábla id oszlopára fog hivatkozni**database/migrations/?_create_personal_access_tokens_table.php:**
+
+            $table->foreignId('team_id')->constrained()->onDelete('cascade');
+
+            $table->timestamp('joined_at')->useCurrent();├──────────────────────┤     ├─────────────────┤       ├──────────────┤        ├──────────┤```bash
+
+            $table->string('role')->default('member'); // captain, member, vice-captain
+
+            $table->timestamps();```php
+
+        });
+
+    }Schema::create('personal_access_tokens', function (Blueprint $table) {│ id (PK)              │  ┌─→│ id (PK)         │1─┐    │ id (PK)      │     ┌─→│ id (PK)  │php artisan serve
+
+
+
+    public function down(): void    $table->id();
+
+    {
+
+        Schema::dropIfExists('team_members');    $table->morphs('tokenable'); // user kapcsolat│ tokenable_id (FK)    │──┘  │ name            │  └───N│ user_id (FK) │     │  │ name     │```
+
+    }
+
+};    $table->string('name');
+
+```
+
+    $table->string('token', 64)->unique();│ tokenable_type       │     │ email (unique)  │       │ team_id (FK) │N────┘  │ sport_   │
+
+**app/Models/TeamMember.php (módosítani kell):**
+
+    $table->text('abilities')->nullable();
 
 ```php
 
-<?php    {
+<?php    $table->timestamp('last_used_at')->nullable();│ name                 │     │ password        │       │ role         │        │  type    │Az API elérhető: `http://localhost:8000/api`
 
 
 
-namespace Database\Seeders;        return $this->belongsToMany(Team::class, 'team_members')---
+namespace App\Models;    $table->timestamp('expires_at')->nullable();
 
 
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;            ->withPivot('joined_at', 'role')
+use Illuminate\Database\Eloquent\Model;    $table->timestamps();│ token (unique)       │     │ sport_type      │       │ joined_at    │        │ max_mem- │
 
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-use App\Models\Team;            ->withTimestamps();### 2. Regisztráció - Új felhasználó létrehozása
+});
+
+class TeamMember extends Model
+
+{```│ abilities            │     │ skill_level     │       │ created_at   │        │  bers    │---
+
+    protected $fillable = [
+
+        'user_id',
+
+        'team_id',
+
+        'joined_at',### Ezt módosítani kell│ last_used_at         │     │ created_at      │       │ updated_at   │        │ created_ │
+
+        'role',
+
+    ];
+
+
+
+    protected $casts = [**database/migrations/0001_01_01_000000_create_users_table.php:**│ expires_at           │     │ updated_at      │       └──────────────┘        │  at      │## Adatbázis Struktúra
+
+        'joined_at' => 'datetime',
+
+    ];
+
+
+
+    public function user(): BelongsTo```php│ created_at           │     └─────────────────┘                               │ updated_ │
+
+    {
+
+        return $this->belongsTo(User::class);Schema::create('users', function (Blueprint $table) {
+
+    }
+
+    $table->id();│ updated_at           │                                                        │  at      │### Táblák áttekintése
+
+    public function team(): BelongsTo
+
+    {    $table->string('name');
+
+        return $this->belongsTo(Team::class);
+
+    }    $table->string('email')->unique();└──────────────────────┘                                                        └──────────┘
+
+}
+
+```    $table->timestamp('email_verified_at')->nullable();
+
+
+
+### Migráció futtatása    $table->string('password');```#### 1. `users` tábla
+
+
+
+```powershell    // ezt bele kell írni
+
+php artisan migrate
+
+```    $table->string('sport_type')->nullable();Felhasználók adatait tárolja.
+
+
+
+---    $table->string('skill_level')->nullable();
+
+
+
+## 3. Seeding    // ezeket bele kell írni---
+
+
+
+Factory és seederek létrehozása    $table->rememberToken();
+
+
+
+### database/factories/UserFactory.php (módosítása)    $table->timestamps();| Mező | Típus | Leírás |
+
+
+
+```php});
+
+<?php
+
+```# I. Modul - Struktúra kialakítása|------|-------|--------|
+
+namespace Database\Factories;
+
+
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+use Illuminate\Support\Facades\Hash;### app/Models/User.php (módosítani kell)| id | bigint (PK) | Egyedi azonosító |
 
 use App\Models\User;
 
-use Illuminate\Support\Facades\Hash;    }
+
+
+class UserFactory extends Factory
+
+{```php## 1. Telepítés (projekt létrehozása, .env konfiguráció, sanctum telepítése, tesztútvonal)| name | varchar(255) | Felhasználó neve |
+
+    protected $model = User::class;
+
+<?php
+
+    public function definition()
+
+    {| email | varchar(255) | Email cím (egyedi) |
+
+        $this->faker = \Faker\Factory::create('hu_HU'); // magyar nevekhez
+
+namespace App\Models;
+
+        return [
+
+            'name' => $this->faker->firstName . ' ' . $this->faker->lastName, // magyaros teljes név`célhely>composer create-project laravel/laravel --prefer-dist Team-Sport`| password | varchar(255) | Hash-elt jelszó |
+
+            'email' => $this->faker->unique()->safeEmail(),
+
+            'password' => Hash::make('password'), // minden user jelszava: passworduse Illuminate\Database\Eloquent\Factories\HasFactory;
+
+            'sport_type' => $this->faker->randomElement(['football', 'basketball', 'volleyball', 'tennis']),
+
+            'skill_level' => $this->faker->randomElement(['beginner', 'intermediate', 'advanced', 'expert']),use Illuminate\Foundation\Auth\User as Authenticatable;| sport_type | varchar(255) | Preferált sport típus |
+
+        ];
+
+    }use Illuminate\Notifications\Notifiable;
+
+}
+
+```use Illuminate\Database\Eloquent\Relations\HasMany;`célhely>cd Team-Sport`| skill_level | varchar(255) | Képzettségi szint |
 
 
 
-class TeamSeeder extends Seeder}**Endpoint:**
+### TeamFactory létrehozásause Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+
+
+```powershelluse Laravel\Sanctum\HasApiTokens;| email_verified_at | timestamp | Email megerősítés ideje |
+
+php artisan make:factory TeamFactory
+
+```
+
+
+
+**database/factories/TeamFactory.php (módosítása):**class User extends Authenticatable**.env fájl módosítása:**| remember_token | varchar(100) | Laravel session token |
+
+
+
+```php{
+
+<?php
+
+    use HasFactory, Notifiable, HasApiTokens;| created_at | timestamp | Létrehozás időpontja |
+
+namespace Database\Factories;
+
+
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+use App\Models\Team;    protected $fillable = [```env| updated_at | timestamp | Módosítás időpontja |
+
+
+
+class TeamFactory extends Factory        'name',
 
 {
 
-    public function run(): void``````http
+    protected $model = Team::class;        'email',DB_CONNECTION=mysql
+
+
+
+    public function definition(): array        'password',
 
     {
 
-        // 1. Igazi user létrehozása: mate / Mate123POST /api/register
+        $this->faker = \Faker\Factory::create('hu_HU');        'sport_type',DB_HOST=127.0.0.1**Kapcsolatok:**
 
-        $mate = User::create([
+        
 
-            'name' => 'Máté',`Team-Sport>php artisan make:model Team -m````
+        $colors = ['Piros', 'Kék', 'Zöld', 'Sárga', 'Fekete', 'Fehér'];        'skill_level',
 
-            'email' => 'mate@example.com',
+        $animals = ['Tigrisek', 'Warriors', 'Dragons', 'Eagles', 'Lions', 'Sharks'];
+
+            ];DB_PORT=3306- `hasMany` → `team_members`
+
+        return [
+
+            'name' => $this->faker->randomElement($colors) . ' ' . $this->faker->randomElement($animals),
+
+            'sport_type' => $this->faker->randomElement(['football', 'basketball', 'volleyball', 'tennis']),
+
+            'max_members' => $this->faker->numberBetween(8, 20),    // amikor a modellt JSON formátumban adod vissza ne jelenjenek meg a következő mezők:DB_DATABASE=team_sport- `belongsToMany` → `teams` (through team_members)
+
+        ];
+
+    }    protected $hidden = [
+
+}
+
+```        'password',DB_USERNAME=root
+
+
+
+### TeamSeeder létrehozása        'remember_token',
+
+
+
+```powershell    ];DB_PASSWORD=#### 2. `teams` tábla
+
+php artisan make:seeder TeamSeeder
+
+```
+
+
+
+**database/seeders/TeamSeeder.php (módosítása):**    protected function casts(): array```Csapatok adatait tárolja.
+
+
+
+```php    {
+
+<?php
+
+        return [
+
+namespace Database\Seeders;
+
+            'email_verified_at' => 'datetime',
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use Illuminate\Database\Seeder;            'password' => 'hashed',**config/app.php módosítása:**| Mező | Típus | Leírás |
+
+use App\Models\Team;
+
+use App\Models\User;        ];
+
+use Illuminate\Support\Facades\Hash;
+
+    }|------|-------|--------|
+
+class TeamSeeder extends Seeder
+
+{
+
+    public function run(): void
+
+    {    public function teamMembers(): HasMany```php| id | bigint (PK) | Egyedi azonosító |
+
+        // 1. Igazi user létrehozása: mate / Mate123
+
+        $mate = User::create([    {
+
+            'name' => 'Máté',
+
+            'email' => 'mate@example.com',        return $this->hasMany(TeamMember::class);'timezone' => 'Europe/Budapest',| name | varchar(255) | Csapat neve |
 
             'password' => Hash::make('Mate123'),
 
-            'sport_type' => 'football',
+            'sport_type' => 'football',    }
 
-            'skill_level' => 'expert',**database/migrations/?_create_teams_table.php (módosítani kell):****Auth:** Nem kell token
+            'skill_level' => 'expert',
+
+        ]);'locale' => 'hu',| sport_type | varchar(255) | Sport típus |
+
+
+
+        // 2. 10 fake user létrehozása Factory-val    public function teams(): BelongsToMany
+
+        $fakeUsers = User::factory()->count(10)->create();
+
+    {'faker_locale' => 'hu_HU',| max_members | integer | Maximum tagok száma (default: 10) |
+
+        // 3. Összes user (mate + 10 fake = 11 user)
+
+        $allUsers = collect([$mate])->merge($fakeUsers);        return $this->belongsToMany(Team::class, 'team_members')
+
+
+
+        // 4. 10 fake team létrehozása Factory-val            ->withPivot('joined_at', 'role')```| created_at | timestamp | Létrehozás |
+
+        $teams = Team::factory()->count(10)->create();
+
+            ->withTimestamps();
+
+        // 5. Random kapcsolatok létrehozása users és teams között
+
+        $roles = ['captain', 'member', 'vice-captain'];    }| updated_at | timestamp | Módosítás |
+
+        
+
+        $teams->each(function ($team) use ($allUsers, $roles) {}
+
+            // Minden csapathoz random 2-5 tag
+
+            $membersCount = rand(2, 5);````Team-Sport>composer require laravel/sanctum`
+
+            $selectedUsers = $allUsers->random(min($membersCount, $allUsers->count()));
+
+            
+
+            $selectedUsers->each(function ($user, $index) use ($team, $roles) {
+
+                $team->users()->attach($user->id, [### Team model létrehozása**Kapcsolatok:**
+
+                    'role' => $index === 0 ? 'captain' : fake()->randomElement($roles),
+
+                    'joined_at' => now()->subDays(rand(1, 365)),
+
+                ]);
+
+            });```bash`Team-Sport>php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"`- `hasMany` → `team_members`
+
+        });
+
+Team-Sport> php artisan make:model Team -m
+
+        // 6. Mate-t berakjuk legalább 2 csapatba captain-ként
+
+        $mateTeams = $teams->random(2);```- `belongsToMany` → `users` (through team_members)
+
+        foreach ($mateTeams as $team) {
+
+            if (!$team->users->contains($mate->id)) {
+
+                $team->users()->attach($mate->id, [
+
+                    'role' => 'captain',**database/migrations/?_create_teams_table.php (módosítani kell):**`Team-Sport>php artisan install:api`
+
+                    'joined_at' => now()->subDays(rand(30, 90)),
+
+                ]);
+
+            }
+
+        }```php#### 3. `team_members` tábla (pivot)
+
+
+
+        $this->command->info('✅ Seeding befejezve: 1 igazi user (mate) + 10 fake user + 10 fake team + kapcsolatok!');<?php
+
+    }
+
+}**routes/api.php:**User és Team közötti kapcsolatot tárolja.
+
+```
+
+use Illuminate\Database\Migrations\Migration;
+
+### database/seeders/DatabaseSeeder.php (módosítása)
+
+use Illuminate\Database\Schema\Blueprint;
+
+```php
+
+<?phpuse Illuminate\Support\Facades\Schema;
+
+
+
+namespace Database\Seeders;```php| Mező | Típus | Leírás |
+
+
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;return new class extends Migration
+
+use Illuminate\Database\Seeder;
+
+{use Illuminate\Support\Facades\Route;|------|-------|--------|
+
+class DatabaseSeeder extends Seeder
+
+{    public function up(): void
+
+    use WithoutModelEvents;
+
+    {| id | bigint (PK) | Egyedi azonosító |
+
+    public function run(): void
+
+    {        Schema::create('teams', function (Blueprint $table) {
+
+        $this->call([
+
+            TeamSeeder::class,            $table->id();Route::get('/ping', function () {| user_id | bigint (FK) | User azonosító |
+
+        ]);
+
+    }            $table->string('name');
+
+}
+
+```            $table->string('sport_type');    return response()->json([| team_id | bigint (FK) | Csapat azonosító |
+
+
+
+### Seeding futtatása            $table->integer('max_members')->default(10);
+
+
+
+```powershell            $table->timestamps();        'status' => 'success',| role | varchar(50) | Szerep (member/captain) |
+
+php artisan db:seed
+
+```        });
+
+
+
+---    }        'message' => 'API is running',| joined_at | timestamp | Csatlakozás időpontja |
+
+
+
+# II. Modul - Controller-ek és endpoint-ok
+
+
+
+## AuthController létrehozása    public function down(): void        'timestamp' => now()->toDateTimeString(),
+
+
+
+```powershell    {
+
+php artisan make:controller Api/AuthController
+
+```        Schema::dropIfExists('teams');        'timezone' => config('app.timezone'),**Foreign Keys:**
+
+
+
+### app/Http/Controllers/Api/AuthController.php    }
+
+
+
+```php};    ], 200);- `user_id` → `users.id` (CASCADE delete)
+
+<?php
+
+```
+
+namespace App\Http\Controllers\Api;
+
+});- `team_id` → `teams.id` (CASCADE delete)
+
+use App\Http\Controllers\Controller;
+
+use App\Models\User;**app/Models/Team.php (módosítani kell):**
+
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Hash;```
+
+use Illuminate\Validation\ValidationException;
+
+```php
+
+class AuthController extends Controller
+
+{<?php#### 4. `personal_access_tokens` tábla
+
+    /**
+
+     * Register a new user
+
+     */
+
+    public function register(Request $request)namespace App\Models;### TesztSanctum Bearer tokenek tárolása.
+
+    {
+
+        $request->validate([
+
+            'name' => 'required|string|max:255',
+
+            'email' => 'required|string|email|max:255|unique:users',use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+            'password' => 'required|string|min:8|confirmed',
+
+            'sport_type' => 'nullable|string|max:255',use Illuminate\Database\Eloquent\Model;
+
+            'skill_level' => 'nullable|string|max:255',
+
+        ]);use Illuminate\Database\Eloquent\Relations\HasMany;**serve:**| Mező | Típus | Leírás |
+
+
+
+        $user = User::create([use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+            'name' => $request->name,
+
+            'email' => $request->email,|------|-------|--------|
+
+            'password' => Hash::make($request->password),
+
+            'sport_type' => $request->sport_type,class Team extends Model
+
+            'skill_level' => $request->skill_level,
+
+        ]);{`Team-Sport>php artisan serve`| id | bigint (PK) | Token azonosító |
+
+
+
+        $token = $user->createToken('auth_token')->plainTextToken;    use HasFactory;
+
+
+
+        return response()->json([    | tokenable_type | varchar(255) | Model típus (User) |
+
+            'message' => 'Registration successful',
+
+            'user' => [    protected $fillable = [
+
+                'id' => $user->id,
+
+                'name' => $user->name,        'name',> POSTMAN teszt: GET http://127.0.0.1:8000/api/ping| tokenable_id | bigint | User ID |
+
+                'email' => $user->email,
+
+                'sport_type' => $user->sport_type,        'sport_type',
+
+                'skill_level' => $user->skill_level,
+
+            ],        'max_members',| name | varchar(255) | Token neve |
+
+            'access_token' => $token,
+
+            'token_type' => 'Bearer',    ];
+
+        ], 201);
+
+    }**VAGY XAMPP:**| token | varchar(64) | Hash-elt token (egyedi) |
+
+
+
+    /**    public function teamMembers(): HasMany
+
+     * Login user
+
+     */    {| abilities | text | Token jogosultságok |
+
+    public function login(Request $request)
+
+    {        return $this->hasMany(TeamMember::class);
+
+        $request->validate([
+
+            'email' => 'required|email',    }> POSTMAN teszt: GET http://127.0.0.1/Team-Sport/public/api/ping| last_used_at | timestamp | Utolsó használat |
+
+            'password' => 'required',
 
         ]);
 
 
 
-        // 2. 10 fake user létrehozása Factory-val
-
-        $fakeUsers = User::factory()->count(10)->create();```php**Request Body:**
+        $user = User::where('email', $request->email)->first();    public function users(): BelongsToMany| expires_at | timestamp | Lejárat |
 
 
 
-        // 3. Összes user (mate + 10 fake = 11 user)Schema::create('teams', function (Blueprint $table) {```json
+        if (!$user || !Hash::check($request->password, $user->password)) {    {
 
-        $allUsers = collect([$mate])->merge($fakeUsers);
+            throw ValidationException::withMessages([
 
-    $table->id();{
+                'email' => ['The provided credentials are incorrect.'],        return $this->belongsToMany(User::class, 'team_members')---| created_at | timestamp | Létrehozás |
+
+            ]);
+
+        }            ->withPivot('joined_at', 'role')
+
+
+
+        $token = $user->createToken('auth_token')->plainTextToken;            ->withTimestamps();| updated_at | timestamp | Módosítás |
+
+
+
+        return response()->json([    }
+
+            'message' => 'Login successful',
+
+            'user' => [}## 2. Modellek és migráció (sémák)
+
+                'id' => $user->id,
+
+                'name' => $user->name,```
+
+                'email' => $user->email,
+
+                'sport_type' => $user->sport_type,### Adatbázis Diagram
+
+                'skill_level' => $user->skill_level,
+
+            ],### TeamMember model létrehozása
+
+            'access_token' => $token,
+
+            'token_type' => 'Bearer',**Ami már megvan (database/migrations):**
+
+        ]);
+
+    }```bash
+
+
+
+    /**Team-Sport> php artisan make:model TeamMember -m```
+
+     * Logout user (revoke token)
+
+     */```
+
+    public function logout(Request $request)
+
+    {Ehhez nem is kell nyúlni:┌─────────────┐         ┌──────────────────┐         ┌─────────────┐
+
+        $request->user()->currentAccessToken()->delete();
+
+**database/migrations/?_create_team_members_table.php (módosítani kell):**
+
+        return response()->json([
+
+            'message' => 'Logout successful',│   users     │         │  team_members    │         │    teams    │
+
+        ]);
+
+    }```php
+
+
+
+    /**<?php```php├─────────────┤         ├──────────────────┤         ├─────────────┤
+
+     * Get authenticated user
+
+     */
+
+    public function me(Request $request)
+
+    {use Illuminate\Database\Migrations\Migration;Schema::create('personal_access_tokens', function (Blueprint $table) {│ id (PK)     │────┐    │ id (PK)          │    ┌────│ id (PK)     │
+
+        return response()->json([
+
+            'user' => $request->user(),use Illuminate\Database\Schema\Blueprint;
+
+        ]);
+
+    }use Illuminate\Support\Facades\Schema;    $table->id();│ name        │    └───→│ user_id (FK)     │    │    │ name        │
+
+}
+
+```
+
+
+
+## TeamController létrehozásareturn new class extends Migration    $table->morphs('tokenable'); // user kapcsolat│ email       │         │ team_id (FK)     │←───┘    │ sport_type  │
+
+
+
+```powershell{
+
+php artisan make:controller Api/TeamController
+
+```    public function up(): void    $table->string('name');│ password    │         │ role             │         │ max_members │
+
+
+
+### app/Http/Controllers/Api/TeamController.php    {
+
+
+
+```php        Schema::create('team_members', function (Blueprint $table) {    $table->string('token', 64)->unique();│ sport_type  │         │ joined_at        │         │ created_at  │
+
+<?php
+
+            $table->id();
+
+namespace App\Http\Controllers\Api;
+
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');    $table->text('abilities')->nullable();│ skill_level │         │                  │         │ updated_at  │
+
+use App\Http\Controllers\Controller;
+
+use App\Models\Team;            // a user_id mező a users tábla id oszlopára fog hivatkozni
+
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;            $table->foreignId('team_id')->constrained()->onDelete('cascade');    $table->timestamp('last_used_at')->nullable();│ created_at  │         └──────────────────┘         └─────────────┘
+
+
+
+class TeamController extends Controller            $table->timestamp('joined_at')->useCurrent();
+
+{
+
+    /**            $table->string('role')->default('member'); // captain, member, vice-captain    $table->timestamp('expires_at')->nullable();│ updated_at  │
+
+     * Display a listing of all teams.
+
+     */            $table->timestamps();
+
+    public function index()
+
+    {        });    $table->timestamps();└─────────────┘
+
+        $teams = Team::with('users')->paginate(15);
+
+    }
+
+        return \App\Http\Resources\TeamResource::collection($teams);
+
+    }});```
+
+
+
+    /**    public function down(): void
+
+     * Store a newly created team.
+
+     */    {```
+
+    public function store(Request $request)
+
+    {        Schema::dropIfExists('team_members');
+
+        $validated = $request->validate([
+
+            'name' => 'required|string|max:255',    }### Seed Adatok
+
+            'sport_type' => 'required|string|max:255',
+
+            'max_members' => 'nullable|integer|min:1|max:100',};
+
+        ]);
+
+```**Ezt módosítani kell:**
+
+        $team = Team::create([
+
+            'name' => $validated['name'],
+
+            'sport_type' => $validated['sport_type'],
+
+            'max_members' => $validated['max_members'] ?? 10,**app/Models/TeamMember.php (módosítani kell):**A `php artisan db:seed` parancs fut:
+
+        ]);
+
+
+
+        return response()->json([
+
+            'message' => 'Team created successfully',```php```php
+
+            'data' => $team->load('users'),
+
+        ], 201);<?php
+
+    }
+
+Schema::create('users', function (Blueprint $table) {**Users (11 db):**
+
+    /**
+
+     * Display the specified team.namespace App\Models;
+
+     */
+
+    public function show(Team $team)    $table->id();- 1 valódi user: Máté (mate@example.com / Mate123)
+
+    {
+
+        return new \App\Http\Resources\TeamResource($team->load('users'));use Illuminate\Database\Eloquent\Model;
+
+    }
+
+use Illuminate\Database\Eloquent\Relations\BelongsTo;    $table->string('name');- 10 faker user magyar nevekkel (jelszó: password)
+
+    /**
+
+     * Update the specified team (PUT or PATCH).
+
+     */
+
+    public function update(Request $request, Team $team)class TeamMember extends Model    $table->string('email')->unique();
+
+    {
+
+        // PATCH részleges frissítés támogatása{
+
+        $validated = $request->validate([
+
+            'name' => 'sometimes|string|max:255',    protected $fillable = [    $table->timestamp('email_verified_at')->nullable();**Teams (10 db):**
+
+            'sport_type' => 'sometimes|string|max:255',
+
+            'max_members' => 'sometimes|integer|min:1|max:100',        'user_id',
+
+        ]);
+
+        'team_id',    $table->string('password');- Random generált csapatnevek (pl: "Piros Warriors", "Kék Tigrisek")
+
+        $team->update($validated);
+
+        'joined_at',
+
+        return response()->json([
+
+            'message' => 'Team updated successfully',        'role',    // ezt bele kell írni- Random sport típusok (football, basketball, volleyball, stb)
+
+            'data' => $team->load('users'),
+
+        ]);    ];
+
+    }
+
+    $table->string('sport_type')->nullable();
+
+    /**
+
+     * Partially update the specified team (PATCH - partial update).    protected $casts = [
+
+     */
+
+    public function partialUpdate(Request $request, Team $team)        'joined_at' => 'datetime',    $table->string('skill_level')->nullable();**Team Members (~38 kapcsolat):**
+
+    {
+
+        $validated = $request->validate([    ];
+
+            'name' => 'sometimes|string|max:255',
+
+            'sport_type' => 'sometimes|string|max:255',    // ezeket bele kell írni- Minden csapatban 2-5 tag random
+
+            'max_members' => 'sometimes|integer|min:1|max:100',
+
+        ]);    public function user(): BelongsTo
+
+
+
+        $team->update($validated);    {    $table->rememberToken();- Máté 2 csapatban captain
+
+
+
+        return response()->json([        return $this->belongsTo(User::class);
+
+            'message' => 'Team partially updated successfully',
+
+            'data' => $team->load('users'),    }    $table->timestamps();
+
+        ]);
+
+    }
+
+
+
+    /**    public function team(): BelongsTo});---
+
+     * Remove the specified team.
+
+     */    {
+
+    public function destroy(Team $team)
+
+    {        return $this->belongsTo(Team::class);```
+
+        $team->delete();
+
+    }
+
+        return response()->json([
+
+            'message' => 'Team deleted successfully',}## API Végpontok
+
+        ]);
+
+    }```
+
+}
+
+```**app/Models/User.php (módosítani kell):**
+
+
+
+## TeamResource létrehozása### Migráció futtatása
+
+
+
+```powershell### Base URL
+
+php artisan make:resource TeamResource
+
+``````bash
+
+
+
+### app/Http/Resources/TeamResource.phpTeam-Sport> php artisan migrate```php```
+
+
+
+```php```
+
+<?php
+
+namespace App\Models;http://localhost:8000/api
+
+namespace App\Http\Resources;
+
+---
+
+use Illuminate\Http\Request;
+
+use Illuminate\Http\Resources\Json\JsonResource;```
+
+
+
+class TeamResource extends JsonResource## 3. Seeding
+
+{
+
+    public function toArray(Request $request): arrayuse Illuminate\Database\Eloquent\Factories\HasFactory;
+
+    {
+
+        return [Factory és seederek létrehozása
+
+            'id' => $this->id,
+
+            'name' => $this->name,use Illuminate\Foundation\Auth\User as Authenticatable;### Végpontok összefoglalása
+
+            'sport_type' => $this->sport_type,
+
+            'max_members' => $this->max_members,### database/factories/UserFactory.php (módosítása)
+
+            'members_count' => $this->users->count(),
+
+            'members' => $this->users->map(function ($user) {use Illuminate\Notifications\Notifiable;
+
+                return [
+
+                    'id' => $user->id,```php
+
+                    'name' => $user->name,
+
+                    'email' => $user->email,<?phpuse Illuminate\Database\Eloquent\Relations\HasMany;| Metódus | Végpont | Auth | Leírás |
+
+                    'sport_type' => $user->sport_type,
+
+                    'skill_level' => $user->skill_level,
+
+                    'joined_at' => $user->pivot->joined_at,
+
+                    'role' => $user->pivot->role,namespace Database\Factories;use Illuminate\Database\Eloquent\Relations\BelongsToMany;|---------|---------|------|--------|
+
+                ];
+
+            }),
+
+            'created_at' => $this->created_at,
+
+            'updated_at' => $this->updated_at,use Illuminate\Database\Eloquent\Factories\Factory;use Laravel\Sanctum\HasApiTokens;| GET | /ping | Nem | API health check |
+
+        ];
+
+    }use Illuminate\Support\Facades\Hash;
+
+}
+
+```use App\Models\User;| POST | /register | Nem | Regisztráció |
+
+
+
+## routes/api.php frissítése
+
+
+
+```phpclass UserFactory extends Factoryclass User extends Authenticatable| POST | /login | Nem | Bejelentkezés |
+
+<?php
+
+{
+
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Api\AuthController;    protected $model = User::class;{| POST | /logout | Igen | Kijelentkezés |
+
+use App\Http\Controllers\Api\TeamController;
+
+
+
+// Health check endpoint
+
+Route::get('/ping', function () {    public function definition()    use HasFactory, Notifiable, HasApiTokens;| GET | /me | Igen | Saját adatok |
+
+    return response()->json([
+
+        'status' => 'success',    {
+
+        'message' => 'API is running',
+
+        'timestamp' => now()->toDateTimeString(),        $this->faker = \Faker\Factory::create('hu_HU'); // magyar nevekhez| GET | /teams | Igen | Csapatok listája |
+
+        'timezone' => config('app.timezone'),
+
+    ]);
+
+});
+
+        return [    protected $fillable = [| POST | /teams | Igen | Új csapat |
+
+// Public routes (no authentication required)
+
+Route::post('/register', [AuthController::class, 'register']);            'name' => $this->faker->firstName . ' ' . $this->faker->lastName, // magyaros teljes név
+
+Route::post('/login', [AuthController::class, 'login']);
+
+            'email' => $this->faker->unique()->safeEmail(),        'name',| GET | /teams/{id} | Igen | Egy csapat |
+
+// Protected routes (authentication required with Sanctum)
+
+Route::middleware('auth:sanctum')->group(function () {            'password' => Hash::make('password'), // minden user jelszava: password
+
+    // Auth routes
+
+    Route::post('/logout', [AuthController::class, 'logout']);            'sport_type' => $this->faker->randomElement(['football', 'basketball', 'volleyball', 'tennis']),        'email',| PUT | /teams/{id} | Igen | Teljes frissítés |
+
+    Route::get('/me', [AuthController::class, 'me']);
+
+                'skill_level' => $this->faker->randomElement(['beginner', 'intermediate', 'advanced', 'expert']),
+
+    // Team CRUD routes
+
+    Route::apiResource('teams', TeamController::class);        ];        'password',| PATCH | /teams/{id} | Igen | Részleges frissítés |
+
+    
+
+    // Additional route for PATCH (partial update)    }
+
+    Route::patch('/teams/{team}/partial', [TeamController::class, 'partialUpdate']);
+
+});}        'sport_type',| DELETE | /teams/{id} | Igen | Törlés |
+
+```
+
+```
+
+---
+
+        'skill_level',
+
+# III. Modul - Tesztelés
+
+### TeamFactory létrehozása
+
+Feature teszt ideális az HTTP kérések szimulálására, mert több komponens (Controller, Middleware, Auth) együttműködését vizsgáljuk.
+
+    ];---
+
+## AuthControllerTest létrehozása
+
+```bash
+
+```powershell
+
+php artisan make:test AuthControllerTestTeam-Sport> php artisan make:factory TeamFactory
+
+```
+
+```
+
+### tests/Feature/AuthControllerTest.php
+
+    // amikor a modellt JSON formátumban adod vissza ne jelenjenek meg a következő mezők:### 1. Health Check - API státusz ellenőrzés
+
+```php
+
+<?php**database/factories/TeamFactory.php (módosítása):**
+
+
+
+namespace Tests\Feature;    protected $hidden = [
+
+
+
+use Illuminate\Foundation\Testing\RefreshDatabase;```php
+
+use Tests\TestCase;
+
+use App\Models\User;<?php        'password',**Endpoint:**
+
+use Illuminate\Support\Facades\Hash;
+
+
+
+class AuthControllerTest extends TestCase
+
+{namespace Database\Factories;        'remember_token',```http
+
+    use RefreshDatabase;
+
+
+
+    public function test_user_can_register_successfully(): void
+
+    {use Illuminate\Database\Eloquent\Factories\Factory;    ];GET /api/ping
+
+        $response = $this->postJson('/api/register', [
+
+            'name' => 'Test User',use App\Models\Team;
+
+            'email' => 'test@example.com',
+
+            'password' => 'password123',```
+
+            'password_confirmation' => 'password123',
+
+            'sport_type' => 'football',class TeamFactory extends Factory
+
+            'skill_level' => 'intermediate',
+
+        ]);{    protected function casts(): array
+
+
+
+        $response->assertStatus(201)    protected $model = Team::class;
+
+            ->assertJsonStructure([
+
+                'message',    {**Auth:** Nem kell token
+
+                'user' => ['id', 'name', 'email', 'sport_type', 'skill_level'],
+
+                'access_token',    public function definition(): array
+
+                'token_type',
+
+            ]);    {        return [
+
+
+
+        $this->assertDatabaseHas('users', ['email' => 'test@example.com']);        $this->faker = \Faker\Factory::create('hu_HU');
+
+    }
+
+                    'email_verified_at' => 'datetime',**Válasz (200):**
+
+    public function test_register_fails_with_missing_fields(): void
+
+    {        $colors = ['Piros', 'Kék', 'Zöld', 'Sárga', 'Fekete', 'Fehér'];
+
+        $response = $this->postJson('/api/register', ['name' => 'Test User']);
+
+        $response->assertStatus(422)->assertJsonValidationErrors(['email', 'password']);        $animals = ['Tigrisek', 'Warriors', 'Dragons', 'Eagles', 'Lions', 'Sharks'];            'password' => 'hashed',```json
+
+    }
+
+        
+
+    public function test_register_fails_with_duplicate_email(): void
+
+    {        return [        ];{
+
+        User::factory()->create(['email' => 'test@example.com']);
+
+        $response = $this->postJson('/api/register', [            'name' => $this->faker->randomElement($colors) . ' ' . $this->faker->randomElement($animals),
+
+            'name' => 'Test User',
+
+            'email' => 'test@example.com',            'sport_type' => $this->faker->randomElement(['football', 'basketball', 'volleyball', 'tennis']),    }  "status": "success",
+
+            'password' => 'password123',
+
+            'password_confirmation' => 'password123',            'max_members' => $this->faker->numberBetween(8, 20),
+
+        ]);
+
+        $response->assertStatus(422)->assertJsonValidationErrors(['email']);        ];  "message": "API is running",
+
+    }
+
+    }
+
+    public function test_user_can_login_successfully(): void
+
+    {}    public function teamMembers(): HasMany  "timestamp": "2025-12-04 10:30:00",
+
+        User::factory()->create(['email' => 'test@example.com', 'password' => Hash::make('password123')]);
+
+        $response = $this->postJson('/api/login', ['email' => 'test@example.com', 'password' => 'password123']);```
+
+        $response->assertStatus(200)->assertJsonStructure(['message', 'user', 'access_token', 'token_type']);
+
+    }    {  "timezone": "Europe/Budapest"
+
+
+
+    public function test_login_fails_with_wrong_password(): void### TeamSeeder létrehozása
+
+    {
+
+        User::factory()->create(['email' => 'test@example.com', 'password' => Hash::make('password123')]);        return $this->hasMany(TeamMember::class);}
+
+        $response = $this->postJson('/api/login', ['email' => 'test@example.com', 'password' => 'wrongpassword']);
+
+        $response->assertStatus(422);```bash
+
+    }
+
+Team-Sport> php artisan make:seeder TeamSeeder    }```
+
+    public function test_authenticated_user_can_get_own_data(): void
+
+    {```
+
+        $user = User::factory()->create();
+
+        $token = $user->createToken('test_token')->plainTextToken;
+
+        $response = $this->withHeaders(['Authorization' => 'Bearer ' . $token])->getJson('/api/me');
+
+        $response->assertStatus(200)->assertJsonStructure(['user']);**database/seeders/TeamSeeder.php (módosítása):**
+
+    }
+
+    public function teams(): BelongsToMany**Mire jó:** Gyors ellenőrzés, hogy az API működik-e.
+
+    public function test_user_can_logout_successfully(): void
+
+    {```php
+
+        $user = User::factory()->create();
+
+        $token = $user->createToken('test_token')->plainTextToken;<?php    {
+
+        $response = $this->withHeaders(['Authorization' => 'Bearer ' . $token])->postJson('/api/logout');
+
+        $response->assertStatus(200)->assertJson(['message' => 'Logout successful']);
+
+    }
+
+}namespace Database\Seeders;        return $this->belongsToMany(Team::class, 'team_members')---
+
+```
+
+
+
+## TeamControllerTest létrehozása
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;            ->withPivot('joined_at', 'role')
+
+```powershell
+
+php artisan make:test TeamControllerTestuse Illuminate\Database\Seeder;
+
+```
+
+use App\Models\Team;            ->withTimestamps();### 2. Regisztráció - Új felhasználó létrehozása
+
+### tests/Feature/TeamControllerTest.php
+
+use App\Models\User;
+
+```php
+
+<?phpuse Illuminate\Support\Facades\Hash;    }
+
+
+
+namespace Tests\Feature;
+
+
+
+use Illuminate\Foundation\Testing\RefreshDatabase;class TeamSeeder extends Seeder}**Endpoint:**
+
+use Tests\TestCase;
+
+use App\Models\User;{
+
+use App\Models\Team;
+
+    public function run(): void``````http
+
+class TeamControllerTest extends TestCase
+
+{    {
+
+    use RefreshDatabase;
+
+        // 1. Igazi user létrehozása: mate / Mate123POST /api/register
+
+    private function authenticatedUser()
+
+    {        $mate = User::create([
+
+        $user = User::factory()->create();
+
+        $token = $user->createToken('test_token')->plainTextToken;            'name' => 'Máté',`Team-Sport>php artisan make:model Team -m````
+
+        return ['user' => $user, 'token' => $token];
+
+    }            'email' => 'mate@example.com',
+
+
+
+    public function test_authenticated_user_can_get_teams_list(): void            'password' => Hash::make('Mate123'),
+
+    {
+
+        $auth = $this->authenticatedUser();            'sport_type' => 'football',
+
+        Team::factory()->count(3)->create();
+
+        $response = $this->withHeaders(['Authorization' => 'Bearer ' . $auth['token']])->getJson('/api/teams');            'skill_level' => 'expert',**database/migrations/?_create_teams_table.php (módosítani kell):****Auth:** Nem kell token
+
+        $response->assertStatus(200);
+
+    }        ]);
+
+
+
+    public function test_teams_list_fails_without_authentication(): void
+
+    {
+
+        $response = $this->getJson('/api/teams');        // 2. 10 fake user létrehozása Factory-val
+
+        $response->assertStatus(401);
+
+    }        $fakeUsers = User::factory()->count(10)->create();```php**Request Body:**
+
+
+
+    public function test_authenticated_user_can_create_team(): void
+
+    {
+
+        $auth = $this->authenticatedUser();        // 3. Összes user (mate + 10 fake = 11 user)Schema::create('teams', function (Blueprint $table) {```json
+
+        $response = $this->withHeaders(['Authorization' => 'Bearer ' . $auth['token']])
+
+            ->postJson('/api/teams', ['name' => 'Test Warriors', 'sport_type' => 'football', 'max_members' => 15]);        $allUsers = collect([$mate])->merge($fakeUsers);
+
+        $response->assertStatus(201)->assertJson(['message' => 'Team created successfully']);
+
+        $this->assertDatabaseHas('teams', ['name' => 'Test Warriors']);    $table->id();{
+
+    }
 
         // 4. 10 fake team létrehozása Factory-val
 
-        $teams = Team::factory()->count(10)->create();    $table->string('name');  "name": "Kiss János",
+    public function test_authenticated_user_can_delete_team(): void
+
+    {        $teams = Team::factory()->count(10)->create();    $table->string('name');  "name": "Kiss János",
+
+        $auth = $this->authenticatedUser();
+
+        $team = Team::factory()->create();
+
+        $response = $this->withHeaders(['Authorization' => 'Bearer ' . $auth['token']])->deleteJson("/api/teams/{$team->id}");
+
+        $response->assertStatus(200)->assertJson(['message' => 'Team deleted successfully']);        // 5. Random kapcsolatok létrehozása users és teams között    $table->string('sport_type');  "email": "janos@example.com",
+
+        $this->assertDatabaseMissing('teams', ['id' => $team->id]);
+
+    }        $roles = ['captain', 'member', 'vice-captain'];
+
+}
+
+```            $table->integer('max_members')->default(10);  "password": "titkos123",
 
 
 
-        // 5. Random kapcsolatok létrehozása users és teams között    $table->string('sport_type');  "email": "janos@example.com",
+## Tesztek futtatása        $teams->each(function ($team) use ($allUsers, $roles) {
 
-        $roles = ['captain', 'member', 'vice-captain'];
 
-            $table->integer('max_members')->default(10);  "password": "titkos123",
 
-        $teams->each(function ($team) use ($allUsers, $roles) {
+```powershell            // Minden csapathoz random 2-5 tag    $table->timestamps();  "password_confirmation": "titkos123",
 
-            // Minden csapathoz random 2-5 tag    $table->timestamps();  "password_confirmation": "titkos123",
+php artisan test
 
-            $membersCount = rand(2, 5);
+```            $membersCount = rand(2, 5);
 
-            $selectedUsers = $allUsers->random(min($membersCount, $allUsers->count()));});  "sport_type": "football",
 
-            
 
-            $selectedUsers->each(function ($user, $index) use ($team, $roles) {```  "skill_level": "intermediate"
+---            $selectedUsers = $allUsers->random(min($membersCount, $allUsers->count()));});  "sport_type": "football",
+
+
+
+## Dokumentálás            
+
+
+
+- **Markdown dokumentáció** - Projektleírás/fejlesztői dokumentáció            $selectedUsers->each(function ($user, $index) use ($team, $roles) {```  "skill_level": "intermediate"
+
+- **POSTMAN collection** - Kész API tesztek (`TeamSport_API_READY.postman_collection.json`)
 
                 $team->users()->attach($user->id, [
 
+---
+
                     'role' => $index === 0 ? 'captain' : fake()->randomElement($roles),}
+
+**Repository:** https://github.com/1tc-molmat/Team-Sport
 
                     'joined_at' => now()->subDays(rand(1, 365)),
 
-                ]);**app/Models/Team.php (módosítani kell):**```
+**Készítette:** Máté  
+
+**Verzió:** 1.0                  ]);**app/Models/Team.php (módosítani kell):**```
+
+**Utolsó frissítés:** 2025-12-07
 
             });
 
