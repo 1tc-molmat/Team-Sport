@@ -77,7 +77,7 @@ Response: 401 Unauthorized
 
 ## Adatbázis terv
 
-![Adatbázis diagram](Névtelen.png)
+![Adatbázis diagram]
 
 ```
 ┌──────────────────────┐     ┌─────────────────┐       ┌──────────────┐        ┌──────────┐
@@ -982,30 +982,12 @@ class TeamControllerTest extends TestCase
 
 `Team-Sport>php artisan test`
 
-![Teszt eredmények](test.png)
+![Teszt eredmények](Névtelen.png)
 
----
-
-## Dokumentálás
-- word: végpontok
-- md: projektleírás/fejlesztői dokumentáció
-- scribe
-- swagger
-- POSTMAN
-
----
 
 # Postman Tesztelés
 
-## Postman Collection Import
-
-A projektben található `TeamSport_API_READY.postman_collection.json` fájl importálható a Postmanbe:
-
-1. Postman megnyitása
-2. **Import** gomb → **File** → `TeamSport_API_READY.postman_collection.json` kiválasztása
-3. Collection importálva → tesztelésre kész
-
-## Tesztelési folyamat
+![Postman példa](test.png)
 
 ### 1. API elérhetőség tesztelése
 
