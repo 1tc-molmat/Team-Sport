@@ -2,14 +2,12 @@
 
 **base_url:** `http://127.0.0.1:8000/api` vagy `http://127.0.0.1/Team-Sport/public/api`
 
-Az API-t olyan funkciókkal kell ellátni, amelyek lehetővé teszik annak nyilvános elérhetőségét. Ennek a backendnek a fő célja, hogy kiszolgálja a frontendet, amelyet a felhasználók csapatok létrehozására és kezelésére használnak.
 
 **Funkciók:**
 - Authentikáció (register, login, logout, token kezelés)
 - Felhasználók regisztrálhatnak sportágukkal és tudásszintjükkel
 - Csapatok létrehozása, listázása, módosítása, törlése (CRUD)
 - Bearer Token alapú biztonságos API védelem Laravel Sanctum-mal
-- Many-to-many kapcsolat users és teams között (team_members kapcsolótáblán keresztül)
 - Magyar lokalizáció (időzóna, faker adatok)
 
 ### A teszteléshez
@@ -77,8 +75,6 @@ Response: 401 Unauthorized
 
 ## Adatbázis terv
 
-![Adatbázis diagram]
-
 ```
 ┌──────────────────────┐     ┌─────────────────┐       ┌──────────────┐        ┌──────────┐
 │personal_access_tokens│     │      users      │       │team_members  │        │  teams   │
@@ -101,10 +97,6 @@ Response: 401 Unauthorized
 # I. Modul struktúra kialakítása
 
 ## 1. Telepítés (projekt létrehozása, .env konfiguráció, sanctum telepítése, tesztútvonal)
-
-`célhely>composer create-project laravel/laravel --prefer-dist Team-Sport`
-
-`célhely>cd Team-Sport`
 
 *.env fájl módosítása*
 ```properties
@@ -144,8 +136,6 @@ Route::get('/ping', function () {
 ```
 
 ### Teszt
-
-**serve**
 
 `Team-Sport>php artisan serve`
 
@@ -831,8 +821,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
 # III. Modul Tesztelés
 
-Feature teszt ideális az HTTP kérések szimulálására, mert több komponens (Controller, Middleware, Auth) együttműködését vizsgáljuk.
-
 `Team-Sport>php artisan make:test AuthControllerTest`
 
 *tests\Feature\AuthControllerTest.php*
@@ -1153,8 +1141,6 @@ Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
             "updated_at": "2025-12-01T12:00:00.000000Z"
         }
     ],
-    "links": {...},
-    "meta": {...}
 }
 ```
 
@@ -1216,7 +1202,6 @@ Authorization: Bearer 3|XyZ9876543210AbCdEfGhIjKlMnOpQrSt
     "sport_type": "football",
     "max_members": 15,
     "members_count": 3,
-    "members": [...],
     "created_at": "2025-12-01T12:00:00.000000Z",
     "updated_at": "2025-12-01T12:00:00.000000Z"
 }
