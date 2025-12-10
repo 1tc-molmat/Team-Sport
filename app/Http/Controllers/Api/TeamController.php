@@ -90,7 +90,7 @@ class TeamController extends Controller
     }
 
     /**
-     * Remove the specified team.
+     * Remove the specified team (soft delete).
      */
     public function destroy(Team $team)
     {

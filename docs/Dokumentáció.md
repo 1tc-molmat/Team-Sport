@@ -48,7 +48,7 @@ Response: 401 Unauthorized
 - **GET** `/teams/{id}` - csapat részletei
 - **PUT/PATCH** `/teams/{id}` - csapat frissítése
 - **PATCH** `/teams/{id}/partial` - csapat részleges frissítése
-- **DELETE** `/teams/{id}` - csapat törlése
+- **DELETE** `/teams/{id}` - csapat törlése (soft delete)
 
 ### Hibák
 - **401 Unauthorized** - A felhasználó nem jogosult a kérés végrehajtására. Ezt a hibát akkor kell visszaadni, ha érvénytelen a token.
@@ -71,7 +71,7 @@ Response: 401 Unauthorized
 |POST | /teams | Hitelesített | 201 Created, 422 Unprocessable Entity, 401 Unauthorized | Csapat létrehozása |
 |PUT/PATCH | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat frissítése |
 |PATCH | /teams/{id}/partial | Hitelesített | 200 OK, 404 Not Found, 422 Unprocessable Entity, 401 Unauthorized | Csapat részleges frissítése |
-|DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése |
+|DELETE | /teams/{id} | Hitelesített | 200 OK, 404 Not Found, 401 Unauthorized | Csapat törlése (soft delete) |
 
 ## Adatbázis terv
 
@@ -89,7 +89,9 @@ Response: 401 Unauthorized
 │ expires_at           │     │ updated_at      │       └──────────────┘        │  at      │
 │ created_at           │     └─────────────────┘                               │ updated_ │
 │ updated_at           │                                                        │  at      │
-└──────────────────────┘                                                        └──────────┘
+└──────────────────────┘                                                        │ deleted_ │
+                                                                                │  at      │
+                                                                                └──────────┘
 ```
 
 ---
@@ -278,10 +280,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Team extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     
     protected $fillable = [
         'name',
@@ -367,6 +370,38 @@ class TeamMember extends Model
         return $this->belongsTo(Team::class);
     }
 }
+```
+
+`Team-Sport>php artisan migrate`
+
+### Soft Delete migráció (2025_12_10)
+
+`Team-Sport>php artisan make:migration add_soft_deletes_to_teams_table`
+
+*database/migrations/2025_12_10_000001_add_soft_deletes_to_teams_table.php*
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('teams', function (Blueprint $table) {
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('teams', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+    }
+};
 ```
 
 `Team-Sport>php artisan migrate`
@@ -735,7 +770,7 @@ class TeamController extends Controller
     }
 
     /**
-     * Remove the specified team.
+     * Remove the specified team (soft delete).
      */
     public function destroy(Team $team)
     {
