@@ -225,7 +225,11 @@ class TeamControllerTest extends TestCase
                 'message' => 'Team deleted successfully',
             ]);
 
+<<<<<<< HEAD
         $this->assertSoftDeleted('teams', [
+=======
+        $this->assertDatabaseMissing('teams', [
+>>>>>>> 1ae52904ea2089679e3ef9b5863f9cdc7f3d8578
             'id' => $team->id,
         ]);
     }
@@ -278,4 +282,7 @@ class TeamControllerTest extends TestCase
         $this->deleteJson('/api/teams/' . $team->id)->assertStatus(401);
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1ae52904ea2089679e3ef9b5863f9cdc7f3d8578
